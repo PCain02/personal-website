@@ -55,6 +55,21 @@ p {
     margin: 0;
 }
 
+/* Background Image */
+body::before {
+    content: "";
+    background-image: url('assets/images/web-design-me.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 500px; /* Adjust the width as needed */
+    height: 500px; /* Adjust the height as needed */
+    z-index: -1; /* Ensure it is behind other content */
+}
+
 /* Responsive font sizes and layout adjustments */
 @media (max-width: 768px) {
     .home-top-text h1 {
@@ -93,6 +108,15 @@ p {
     .project-box {
         width: 80%;
     }
+
+    .project-image img {
+        width: 80%; /* Adjust the image width for smaller screens */
+    }
+
+    body::before {
+        width: 200px; /* Adjust the width for smaller screens */
+        height: 200px; /* Adjust the height for smaller screens */
+    }
 }
 
 @media (max-width: 480px) {
@@ -125,6 +149,15 @@ p {
 
     .project-box {
         width: 100%;
+    }
+
+    .project-image img {
+        width: 60%; /* Adjust the image width for very small screens */
+    }
+
+    body::before {
+        width: 200px; /* Adjust the width for smaller screens */
+        height: 200px; /* Adjust the height for smaller screens */
     }
 }
 
@@ -262,7 +295,7 @@ p {
     }
 
     .project-image img {
-        width: 100%; /* Adjust the image width for smaller screens */
+        width: 80%; /* Adjust the image width for smaller screens */
     }
 }
 
@@ -272,6 +305,6 @@ p {
     }
 
     .project-image img {
-        width: 100%; /* Full width for very small screens */
+        width: 60%; /* Adjust the image width for very small screens */
     }
 }
