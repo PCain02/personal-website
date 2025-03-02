@@ -75,9 +75,10 @@
 
 .site-footer .social-icons a {
     margin: 0 10px;
+    text-decoration: none; /* Remove underline */
 }
 
-.site-footer .social-icons img {
+.site-footer .social-icons a img {
     width: 30px;
     height: 30px;
 }

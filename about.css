@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+h3 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    color: #4F868D;
+    white-space: nowrap;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    white-space: nowrap;
+}
+
+p {
+    font-family: 'Nunito', sans-serif;
+    white-space: normal;
+    word-wrap: break-word;
+}
