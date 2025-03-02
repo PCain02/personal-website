@@ -55,19 +55,64 @@ p {
     margin: 0;
 }
 
-/* Background Image */
-body::before {
+/* Background Images */
+body::before, body::after {
     content: "";
-    background-image: url('assets/images/web-design-me.png');
+    position: absolute;
     background-size: contain;
     background-repeat: no-repeat;
+    z-index: -1; /* Ensure it is behind other content */
+}
+
+body::before {
+    background-image: url('assets/images/web-design-me.png');
     background-position: top right;
-    position: absolute;
-    top: 0;
-    right: 0;
     width: 500px; /* Adjust the width as needed */
     height: 500px; /* Adjust the height as needed */
+    top: 0;
+    right: 0;
+}
+
+body::after {
+    background-image: url('assets/images/purple-blob1.png'); /* Replace with your image path */
+    background-position: bottom left;
+    width: 500px; /* Adjust the width as needed */
+    height: 800px; /* Adjust the height as needed */
+    bottom: -50px; /* Adjust the bottom position as needed */
+    left: -50px; /* Adjust the left position as needed */
+}
+
+/* Additional Background Image */
+body::before, body::after, body .additional-background {
+    content: "";
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
     z-index: -1; /* Ensure it is behind other content */
+}
+
+body .additional-background {
+    background-image: url('assets/images/purple-blob1.png'); /* Replace with your image path */
+    background-position: center left;
+    width: 400px; /* Adjust the width as needed */
+    height: 400px; /* Adjust the height as needed */
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+
+/* Blob Background for Featured Projects */
+.blob-background {
+    position: absolute;
+    background-image: url('assets/images/purple-blob2.png'); /* Replace with your image path */
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 500px; /* Adjust the width as needed */
+    height: 500px; /* Adjust the height as needed */
+    bottom: -1000px; /* Adjust the bottom position as needed */
+    right: -10px; /* Adjust the right position as needed */
+    z-index: -1; /* Ensure it is behind the featured projects */
 }
 
 /* Responsive font sizes and layout adjustments */
@@ -117,6 +162,16 @@ body::before {
         width: 200px; /* Adjust the width for smaller screens */
         height: 200px; /* Adjust the height for smaller screens */
     }
+
+    body::after {
+        width: 150px; /* Adjust the width for smaller screens */
+        height: 150px; /* Adjust the height for smaller screens */
+    }
+
+    body .additional-background {
+        width: 200px; /* Adjust the width for smaller screens */
+        height: 200px; /* Adjust the height for smaller screens */
+    }
 }
 
 @media (max-width: 480px) {
@@ -156,8 +211,18 @@ body::before {
     }
 
     body::before {
-        width: 200px; /* Adjust the width for smaller screens */
-        height: 200px; /* Adjust the height for smaller screens */
+        width: 150px; /* Adjust the width for smaller screens */
+        height: 150px; /* Adjust the height for smaller screens */
+    }
+
+    body::after {
+        width: 100px; /* Adjust the width for smaller screens */
+        height: 100px; /* Adjust the height for smaller screens */
+    }
+
+    body .additional-background {
+        width: 150px; /* Adjust the width for smaller screens */
+        height: 150px; /* Adjust the height for smaller screens */
     }
 }
 
