@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
     const searchInput = document.getElementById("search-input");
-    const searchButton = document.getElementById("search-button");
 
     function performSearch() {
         const query = searchInput.value.toLowerCase();
@@ -16,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    searchButton.addEventListener("click", performSearch);
+    searchInput.addEventListener("input", performSearch); // Trigger search on input change
 
     searchInput.addEventListener("keypress", function (event) {
         if (event.key === "Enter") {
