@@ -67,8 +67,8 @@ body::before, body::after {
 body::before {
     background-image: url('assets/images/web-design-me.png');
     background-position: top right;
-    width: 500px; /* Adjust the width as needed */
-    height: 500px; /* Adjust the height as needed */
+    width: 600px; /* Adjust the width as needed */
+    height: 600px; /* Adjust the height as needed */
     top: 0;
     right: 0;
 }
