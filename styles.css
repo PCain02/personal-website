@@ -79,6 +79,20 @@ p {
     .home-top-text {
         max-width: 90%; 
     }
+
+    .button {
+        font-size: 14px;
+        padding: 8px 16px;
+        margin: 5px;
+    }
+
+    .featured-projects {
+        width: 90%;
+    }
+
+    .project-box {
+        width: 80%;
+    }
 }
 
 @media (max-width: 480px) {
@@ -98,6 +112,19 @@ p {
 
     .home-top-text {
         max-width: 100%; 
+    }
+
+    .button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .featured-projects {
+        width: 100%;
+    }
+
+    .project-box {
+        width: 100%;
     }
 }
 
@@ -157,7 +184,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 80%;
+    width: 50%; /* Set the width to 50% of the screen */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -166,18 +193,22 @@ p {
 
 .project-box.type1 .project-text {
     order: 1;
+    text-align: left;
 }
 
 .project-box.type1 .project-image {
     order: 2;
+    text-align: right;
 }
 
 .project-box.type2 .project-text {
     order: 2;
+    text-align: right;
 }
 
 .project-box.type2 .project-image {
     order: 1;
+    text-align: left;
 }
 
 .project-text {
@@ -185,10 +216,15 @@ p {
     padding-right: 20px;
 }
 
+.project-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
 .project-image img {
-    width: 200px;
+    width: 100%; /* Set the image width to 100% of the project image container */
     height: auto;
-    margin: 3vw;
     border-radius: 8px;
 }
 
@@ -216,6 +252,7 @@ p {
 @media (max-width: 768px) {
     .project-box {
         flex-direction: column;
+        width: 80%; /* Adjust the width for smaller screens */
         text-align: center;
     }
 
@@ -225,6 +262,16 @@ p {
     }
 
     .project-image img {
-        width: 50%;
+        width: 100%; /* Adjust the image width for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .project-box {
+        width: 100%; /* Full width for very small screens */
+    }
+
+    .project-image img {
+        width: 100%; /* Full width for very small screens */
     }
 }

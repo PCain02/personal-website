@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const searchInput = document.getElementById("search-input");
     const searchButton = document.getElementById("search-button");
 
-    searchButton.addEventListener("click", function () {
+    function performSearch() {
         const query = searchInput.value.toLowerCase();
         if (query.trim() === "") return; // Ignore empty searches
 
@@ -14,5 +14,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 element.innerHTML = element.textContent.replace(regex, `<mark>$1</mark>`); // Highlight matches
             }
         });
+    }
+
+    searchButton.addEventListener("click", performSearch);
+
+    searchInput.addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+            event.preventDefault(); // Prevent form submission
+            performSearch();
+        }
     });
 });
