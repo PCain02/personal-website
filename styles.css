@@ -115,6 +115,25 @@ body .additional-background {
     z-index: -1; /* Ensure it is behind the featured projects */
 }
 
+
+/* Back to Top Link */
+.back-to-top-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.back-to-top {
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    color: #4F868D;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.back-to-top:hover {
+    color: #3A6B75;
+}
+
 /* Responsive font sizes and layout adjustments */
 @media (max-width: 768px) {
     .home-top-text h1 {
