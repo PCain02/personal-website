@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    <div class="search-results-container">
+        <h1>Search Results</h1>
+        <div id="search-results"></div>
+    </div>
+    <script src="header.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const query = urlParams.get('q');
+            const searchResultsContainer = document.getElementById("search-results");
+
+            if (query) {
+                const elements = document.querySelectorAll("h1, h2, h3, p, li");
+                let results = [];
+                elements.forEach(element => {
+                    if (element.textContent.toLowerCase().includes(query.toLowerCase())) {
+                        const regex = new RegExp(`(${query})`, "gi");
+                        const highlightedText = element.textContent.replace(regex, `<mark>$1</mark>`);
+                        results.push(`<div class="search-result-item">${highlightedText}</div>`);
+                    }
+                });
+
+                if (results.length > 0) {
+                    searchResultsContainer.innerHTML = results.join("");
+                } else {
+                    searchResultsContainer.innerHTML = "<p>No results found.</p>";
+                }
+            } else {
+                searchResultsContainer.innerHTML = "<p>Please enter a search query.</p>";
+            }
+        });
+    </script>
+</body>
+</html>
