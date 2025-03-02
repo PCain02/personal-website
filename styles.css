@@ -188,6 +188,7 @@ p {
 .project-image img {
     width: 200px;
     height: auto;
+    margin: 3vw;
     border-radius: 8px;
 }
 
@@ -224,6 +225,6 @@ p {
     }
 
     .project-image img {
-        width: 100%;
+        width: 50%;
     }
 }
