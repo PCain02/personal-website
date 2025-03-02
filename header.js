@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(response => response.text())
         .then(data => {
             document.getElementById("header-container").innerHTML = data;
-
             // Create and append header.css dynamically
             let link = document.createElement("link");
             link.rel = "stylesheet";
