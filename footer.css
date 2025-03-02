@@ -1,15 +1,25 @@
-footer {
+.site-footer {
     background-color: #F8F9FA;
     text-align: center;
     padding: 40px 20px;
+    width: 100%;
+    position: relative;
 }
 
-h2 {
+.site-footer form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%; 
+    margin: auto;
+}
+
+.site-footer h2 {
     font-family: 'Comfortaa', sans-serif;
     font-size: 24px;
 }
 
-.underline {
+.site-footer .underline {
     width: 50px;
     height: 3px;
     background-color: #E98C3F;
@@ -17,7 +27,7 @@ h2 {
     border: none;
 }
 
-form {
+.site-footer form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,13 +35,13 @@ form {
     margin: auto;
 }
 
-label {
+.site-footer label {
     font-family: 'Comfortaa', sans-serif;
     font-size: 14px;
     margin-top: 10px;
 }
 
-input, textarea {
+.site-footer input, .site-footer textarea {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
@@ -40,11 +50,11 @@ input, textarea {
     font-size: 14px;
 }
 
-textarea {
+.site-footer textarea {
     height: 100px;
 }
 
-button {
+.site-footer button {
     background-color: #FFC72C;
     border: none;
     padding: 10px 20px;
@@ -54,25 +64,25 @@ button {
     margin-top: 10px;
 }
 
-button:hover {
+.site-footer button:hover {
     background-color: #E0A800;
 }
 
 /* Social Icons */
-.social-icons {
+.site-footer .social-icons {
     margin-top: 20px;
 }
 
-.social-icons a {
+.site-footer .social-icons a {
     margin: 0 10px;
 }
 
-.social-icons img {
+.site-footer .social-icons img {
     width: 30px;
     height: 30px;
 }
 
-footer p {
+.site-footer p {
     margin-top: 20px;
     font-size: 14px;
     color: #777;
