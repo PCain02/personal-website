@@ -12,3 +12,17 @@ document.addEventListener("DOMContentLoaded", function () {
             document.head.appendChild(link);
         });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const searchInput = document.querySelector(".search-bar input");
+
+    searchInput.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            const query = searchInput.value.trim();
+            if (query) {
+                window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+            }
+        }
+    });
+});
