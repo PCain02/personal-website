@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Pallas-Athena</title>
+    <link rel="stylesheet" href="blog.css">
+    <script src="header.js" defer></script>
+    <script src="search.js" defer></script>
+    <script src="footer.js" defer></script>
+</head>
+<body>
+
+    <div id="header-container"></div>
+
+    <div class="blog-container">
+        <!-- Sidebar for filtering/searching by topic -->
+        <aside class="blog-sidebar">
+            <h2>Filter by Topic</h2>
+            <ul>
+                <li><button class="filter-button" data-topic="all">All</button></li>
+                <li><button class="filter-button" data-topic="technology">Technology</button></li>
+                <li><button class="filter-button" data-topic="art">Art</button></li>
+                <li><button class="filter-button" data-topic="science">Science</button></li>
+                <li><button class="filter-button" data-topic="personal">Personal</button></li>
+            </ul>
+        </aside>
+
+        <!-- Main content area for blog posts -->
+        <main class="blog-posts">
+            <div class="blog-post" data-topic="technology">
+                <h3>Understanding Machine Learning</h3>
+                <p>A beginner's guide to machine learning concepts and applications.</p>
+                <a href="posts/machine-learning.html" class="read-more">Read More</a>
+            </div>
+            <div class="blog-post" data-topic="art">
+                <h3>The Art of Mixed Media</h3>
+                <p>Exploring the creative possibilities of mixed media art.</p>
+                <a href="posts/mixed-media.html" class="read-more">Read More</a>
+            </div>
+            <div class="blog-post" data-topic="science">
+                <h3>Robotics in Everyday Life</h3>
+                <p>How robotics is transforming industries and daily life.</p>
+                <a href="posts/robotics.html" class="read-more">Read More</a>
+            </div>
+            <div class="blog-post" data-topic="personal">
+                <h3>My Journey as a Double Major</h3>
+                <p>Reflections on studying computer science and art at Allegheny College.</p>
+                <a href="posts/journey.html" class="read-more">Read More</a>
+            </div>
+        </main>
+    </div>
+    <!-- Go Back to the Top Link -->
+    <div class="back-to-top-container">
+        <a href="#header-container" class="back-to-top">Go Back to the Top</a>
+    </div>
+    
+    <div id="site-footer"></div>
+
+</body>
+</html>
