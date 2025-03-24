@@ -20,32 +20,43 @@
             <ul>
                 <li><button class="filter-button" data-topic="all">All</button></li>
                 <li><button class="filter-button" data-topic="technology">Technology</button></li>
-                <li><button class="filter-button" data-topic="art">Art</button></li>
-                <li><button class="filter-button" data-topic="science">Science</button></li>
-                <li><button class="filter-button" data-topic="personal">Personal</button></li>
+                <li><button class="filter-button" data-topic="artistic_practice">Artistic Practice</button></li>
+                <li><button class="filter-button" data-topic="tutorials">Tutorials</button></li>
+                <li><button class="filter-button" data-topic="fun">Fun</button></li>
             </ul>
         </aside>
 
         <!-- Main content area for blog posts -->
         <main class="blog-posts">
-            <div class="blog-post" data-topic="technology">
+            <div class="sort-container">
+                <label for="sort-by">Sort by:</label>
+                <select id="sort-by">
+                    <option value="newest">Newest First</option>
+                    <option value="oldest">Oldest First</option>
+                </select>
+            </div>
+            <div class="blog-post" data-topic="technology" data-date="2025-03-01">
                 <h3>Understanding Machine Learning</h3>
                 <p>A beginner's guide to machine learning concepts and applications.</p>
+                <p class="post-meta">Topic: Technology | Date: March 1, 2025</p>
                 <a href="posts/machine-learning.html" class="read-more">Read More</a>
             </div>
-            <div class="blog-post" data-topic="art">
+            <div class="blog-post" data-topic="artistic_practice" data-date="2025-02-15">
                 <h3>The Art of Mixed Media</h3>
                 <p>Exploring the creative possibilities of mixed media art.</p>
+                <p class="post-meta">Topic: Artistic Practice | Date: February 15, 2025</p>
                 <a href="posts/mixed-media.html" class="read-more">Read More</a>
             </div>
-            <div class="blog-post" data-topic="science">
+            <div class="blog-post" data-topic="tutorials" data-date="2025-01-20">
                 <h3>Robotics in Everyday Life</h3>
                 <p>How robotics is transforming industries and daily life.</p>
+                <p class="post-meta">Topic: Science | Date: January 20, 2025</p>
                 <a href="posts/robotics.html" class="read-more">Read More</a>
             </div>
-            <div class="blog-post" data-topic="personal">
+            <div class="blog-post" data-topic="fun" data-date="2025-03-10">
                 <h3>My Journey as a Double Major</h3>
                 <p>Reflections on studying computer science and art at Allegheny College.</p>
+                <p class="post-meta">Topic: Personal | Date: March 10, 2025</p>
                 <a href="posts/journey.html" class="read-more">Read More</a>
             </div>
         </main>
