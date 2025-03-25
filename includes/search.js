@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
             searchResultsContainer.innerHTML = "<p>No results found.</p>";
         }
 
+        // Update the search results page URL with the query
         window.location.href = `search.html?q=${encodeURIComponent(query)}`;
     }
 
@@ -44,6 +45,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+
+    
     const filterButtons = document.querySelectorAll(".filter-button");
     const blogPosts = document.querySelectorAll(".blog-post");
 
