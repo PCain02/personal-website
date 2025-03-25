@@ -16,6 +16,13 @@
     <div class="blog-container">
         <!-- Sidebar for filtering/searching by topic -->
         <aside class="blog-sidebar">
+            <div class="sort-container">
+                <label for="sort-by">Sort by:</label>
+                <select id="sort-by">
+                    <option value="newest">Newest First</option>
+                    <option value="oldest">Oldest First</option>
+                </select>
+            </div>
             <h2>Filter by Topic</h2>
             <ul>
                 <li><button class="filter-button" data-topic="all">All</button></li>
@@ -28,13 +35,6 @@
 
         <!-- Main content area for blog posts -->
         <main class="blog-posts">
-            <div class="sort-container">
-                <label for="sort-by">Sort by:</label>
-                <select id="sort-by">
-                    <option value="newest">Newest First</option>
-                    <option value="oldest">Oldest First</option>
-                </select>
-            </div>
             <div class="blog-post" data-topic="technology" data-date="2025-03-01">
                 <div class="blog-post-content">
                     <h3>My Journey with Web Design</h3>

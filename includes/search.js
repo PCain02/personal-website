@@ -1,45 +1,46 @@
 document.addEventListener("DOMContentLoaded", function () {
     const searchInput = document.getElementById("search-input");
-    const searchResultsContainer = document.createElement("div");
-    searchResultsContainer.id = "search-results";
-    searchInput.parentNode.appendChild(searchResultsContainer);
+    const searchButton = document.getElementById("search-button");
+    const searchResultsContainer = document.getElementById("search-results");
 
     function performSearch() {
-        const query = searchInput.value.toLowerCase();
+        const query = searchInput.value.trim().toLowerCase();
         searchResultsContainer.innerHTML = ""; // Clear previous results
-        if (query.trim() === "") return; // Ignore empty searches
 
-        const elements = document.querySelectorAll("h1, h2, h3, p, li"); // Search in these elements
+        if (query === "") {
+            searchResultsContainer.innerHTML = "<p>Please enter a search query.</p>";
+            return;
+        }
+
+        const elements = document.querySelectorAll("h1, h2, h3, p, li"); // Elements to search in
         let results = [];
+
         elements.forEach(element => {
-            element.innerHTML = element.textContent; // Reset any previous highlights
-            if (element.textContent.toLowerCase().includes(query)) {
+            const text = element.textContent.toLowerCase();
+            if (text.includes(query)) {
                 const regex = new RegExp(`(${query})`, "gi");
-                element.innerHTML = element.textContent.replace(regex, `<mark>$1</mark>`); // Highlight matches
-                results.push(element);
+                const highlightedText = element.textContent.replace(regex, `<mark>$1</mark>`);
+                results.push(`<div class="search-result-item">${highlightedText}</div>`);
             }
         });
 
-        // Display top 5 results
-        results.slice(0, 5).forEach(result => {
-            const resultItem = document.createElement("div");
-            resultItem.className = "search-result-item";
-            resultItem.innerHTML = result.innerHTML;
-            searchResultsContainer.appendChild(resultItem);
-        });
+        if (results.length > 0) {
+            searchResultsContainer.innerHTML = results.join("");
+        } else {
+            searchResultsContainer.innerHTML = "<p>No results found.</p>";
+        }
+
+        window.location.href = `search.html?q=${encodeURIComponent(query)}`;
     }
 
-    searchInput.addEventListener("input", performSearch); // Trigger search on input change
+    // Trigger search on button click
+    searchButton.addEventListener("click", performSearch);
 
+    // Trigger search on pressing Enter
     searchInput.addEventListener("keypress", function (event) {
         if (event.key === "Enter") {
-            event.preventDefault(); // Prevent form submission
+            event.preventDefault();
             performSearch();
-            // Redirect to search page with query
-            const query = searchInput.value.trim();
-            if (query) {
-                window.location.href = `search.html?q=${encodeURIComponent(query)}`;
-            }
         }
     });
 
@@ -98,4 +99,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Call sortByDate on page load
     sortByDate();
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const sortByDropdown = document.getElementById("sort-by");
+    const blogPostsContainer = document.querySelector(".blog-posts");
+    const blogPosts = Array.from(document.querySelectorAll(".blog-post"));
+
+    // Function to sort blog posts
+    const sortBlogPosts = (order) => {
+        const sortedPosts = blogPosts.sort((a, b) => {
+            const dateA = new Date(a.getAttribute("data-date"));
+            const dateB = new Date(b.getAttribute("data-date"));
+
+            return order === "newest" ? dateB - dateA : dateA - dateB;
+        });
+
+        // Clear and re-append sorted posts
+        blogPostsContainer.innerHTML = "";
+        sortedPosts.forEach(post => blogPostsContainer.appendChild(post));
+    };
+
+    // Event listener for the dropdown
+    sortByDropdown.addEventListener("change", (event) => {
+        const selectedOrder = event.target.value;
+        sortBlogPosts(selectedOrder);
+    });
+
+    // Default sort on page load (newest first)
+    sortBlogPosts("newest");
 });
