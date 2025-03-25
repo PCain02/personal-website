@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Arduino</title>
+    <link rel="stylesheet" href="blog.css">
+    <script src="/_includes/header.js" defer></script>
+    <script src="/_includes/footer.js" defer></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <div id="header-container"></div>
+
+    <!-- Blog Post Content -->
+    <div class="blog-post-container">
+        <!-- Table of Contents -->
+        <aside class="blog-toc">
+            <h2>Table of Contents</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#what-is-arduino">What is Arduino?</a></li>
+                <li><a href="#why-use-arduino">Why Use Arduino?</a></li>
+                <li><a href="#getting-started">Getting Started</a></li>
+                <li><a href="#downloading-arduino-ide">Downloading Arduino IDE</a></li>
+                <li><a href="#basic-project">Your First Project</a></li>
+                <li><a href="#troubleshooting">Troubleshooting Common Issues</a></li>
+                <li><a href="#conclusion">Conclusion</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Blog Content -->
+        <article class="blog-post-content">
+            <h1>Introduction to Arduino</h1>
+            <p class="post-meta">Topic: Electronics | Date: March 25, 2025</p>
+            <div class="back-to-blog-top">
+                <a href="index.html" class="button small-button">Back to Blog</a>
+            </div>
+
+            <div class="blog-post-image">
+                <img src="images/arduino.jpg" alt="Arduino Board Example">
+            </div>
+
+            <h2 id="introduction">Introduction</h2>
+            <p>
+                Arduino is an open-source electronics platform that makes it easy to build interactive projects. Whether you are 
+                an artist, engineer, or hobbyist, Arduino provides a gateway into the world of programming and hardware.
+            </p>
+
+            <h2 id="what-is-arduino">What is Arduino?</h2>
+            <p>
+                Arduino is a microcontroller-based platform designed for building digital devices and interactive objects. It 
+                consists of a physical programmable circuit board and an easy-to-use software (IDE) for writing and uploading code.
+            </p>
+
+            <h2 id="why-use-arduino">Why Use Arduino?</h2>
+            <p>
+                Arduino is beginner-friendly, affordable, and widely used in prototyping, automation, and IoT applications. With a vast 
+                community and extensive documentation, it’s a great platform to start learning embedded systems.
+            </p>
+
+            <h2 id="getting-started">Getting Started</h2>
+            <p>
+                To start with Arduino, you will need:
+                <ul>
+                    <li>An Arduino board (e.g., Arduino Uno)</li>
+                    <li>A USB cable</li>
+                    <li>Arduino IDE (free software)</li>
+                    <li>Basic electronic components (LEDs, resistors, sensors)</li>
+                </ul>
+            </p>
+
+            <h2 id="downloading-arduino-ide">Downloading Arduino IDE</h2>
+            <p>
+                The Arduino IDE is the official software used to write and upload code to your Arduino board. Follow these steps to install it:
+            </p>
+            <ol>
+                <li>Go to the official Arduino website: <a href="https://www.arduino.cc/en/software">Arduino Software Page</a></li>
+                <li>Download the appropriate version for your operating system (Windows, macOS, or Linux).</li>
+                <li>Run the installer and follow the on-screen instructions.</li>
+                <li>Once installed, open the Arduino IDE and connect your board via USB.</li>
+                <li>Select the correct board model and port under the "Tools" menu.</li>
+                <li>You are now ready to write and upload your first program!</li>
+            </ol>
+
+            <h2 id="basic-project">Your First Project</h2>
+            <p>
+                Let's start with the classic "Blink" project. This code makes an LED blink at one-second intervals:
+            </p>
+            <pre>
+                <code>
+void setup() {
+    pinMode(LED_BUILTIN, OUTPUT);
+}
+void loop() {
+    digitalWrite(LED_BUILTIN, HIGH);
+    delay(1000);
+    digitalWrite(LED_BUILTIN, LOW);
+    delay(1000);
+}
+                </code>
+            </pre>
+            <p>
+                Upload this code to your Arduino board using the Arduino IDE, and watch the built-in LED start blinking!
+            </p>
+
+            <h2 id="troubleshooting">Troubleshooting Common Issues</h2>
+            <p>
+                If you encounter issues with your Arduino, here are some common troubleshooting steps:
+            </p>
+            <ul>
+                <li><strong>Board Not Recognized:</strong> Ensure that you have installed the correct USB drivers for your board.</li>
+                <li><strong>Code Won't Upload:</strong> Check that the correct board and port are selected in the Arduino IDE.</li>
+                <li><strong>LED Not Blinking:</strong> Ensure your code is correctly uploaded and that the built-in LED is functional.</li>
+                <li><strong>Serial Monitor Not Displaying Data:</strong> Confirm that the correct baud rate is set in the Serial Monitor.</li>
+            </ul>
+            <p>
+                If you're still having trouble, check the <a href="https://forum.arduino.cc/">Arduino Forums</a> for additional support.
+            </p>
+
+            <h2 id="conclusion">Conclusion</h2>
+            <p>
+                Congratulations! You’ve taken your first steps into the world of Arduino. By installing the IDE and running your first 
+                project, you've unlocked the potential to create countless interactive electronics projects. Keep exploring, experiment 
+                with new components, and have fun with your Arduino journey!
+            </p>
+
+            <!-- Back to Blog Button -->
+            <div class="back-to-blog">
+                <a href="index.html" class="button">Back to Blog</a>
+            </div>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <div id="site-footer"></div>
+
+</body>
+</html>

@@ -25,7 +25,7 @@ h1 {
     color: black !important;
 }
 
-p {
+p, ul, li {
     font-family: 'Nunito', sans-serif;
     white-space: normal;
     word-wrap: break-word;
@@ -219,11 +219,11 @@ p {
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 20px; /* Sticks to the top when scrolling */
+    position: sticky; /* Enable sticky positioning */
+    top: 20px; /* Distance from the top of the viewport */
     height: fit-content;
-    max-height: calc(100vh - 40px); /* Prevents overflow on very tall screens */
-    overflow-y: auto; /* Adds scroll if the TOC content is too long */
+    max-height: calc(100vh - 40px); /* Prevents the TOC from exceeding the viewport height */
+    overflow-y: auto; /* Enable vertical scrolling if the content is too long */
     word-wrap: break-word; /* Break long words to prevent overflow */
     overflow-wrap: break-word; /* Ensure compatibility with modern browsers */
     hyphens: auto; /* Add hyphenation for long words if supported */
@@ -404,6 +404,9 @@ p {
         width: 100%; /* Full width for the TOC */
         margin-bottom: 20px;
         padding: 10px; /* Add padding for better spacing */
+        position: static; /* Remove sticky behavior on small screens */
+        max-height: none; /* Allow the TOC to expand fully */
+        overflow-y: visible; /* Remove scrolling for small screens */
     }
 
     .blog-post-content {
@@ -429,5 +432,10 @@ p {
     .blog-thumbnail {
         width: 100%; /* Make the thumbnail full width */
         margin-top: 10px;
+    }
+
+    .blog-thumbnail img {
+        width: 50%; /* Ensure the image still fills the container */
+        height: 100%; /* Maintain the aspect ratio */
     }
 }
