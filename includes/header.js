@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Try to load the header from the first path
-    fetch("../_includes/header.html")
+    fetch("../includes/header.html")
         .then(response => {
             if (!response.ok) {
                 // If the first path fails, try the second path
-                return fetch("_includes/header.html");
+                return fetch("includes/header.html");
             }
             return response;
         })
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Create and append header.css dynamically
             let link = document.createElement("link");
             link.rel = "stylesheet";
-            link.href = "../_includes/header.css"; // Default to the first path for CSS
+            link.href = "../includes/header.css"; // Default to the first path for CSS
             document.head.appendChild(link);
         })
         .catch(error => {
