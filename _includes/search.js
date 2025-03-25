@@ -60,3 +60,42 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const filterButtons = document.querySelectorAll(".filter-button");
+    const blogPosts = document.querySelectorAll(".blog-post");
+
+    filterButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const topic = button.getAttribute("data-topic");
+
+            blogPosts.forEach(post => {
+                const postTopic = post.getAttribute("data-topic");
+
+                // Show or hide posts based on the selected topic
+                if (topic === "all" || postTopic === topic) {
+                    post.style.display = "block";
+                } else {
+                    post.style.display = "none";
+                }
+            });
+        });
+    });
+
+    // Example: Add sorting by date (newest first)
+    const sortByDate = () => {
+        const postsArray = Array.from(blogPosts);
+        postsArray.sort((a, b) => {
+            const dateA = new Date(a.getAttribute("data-date"));
+            const dateB = new Date(b.getAttribute("data-date"));
+            return dateB - dateA; // Newest first
+        });
+
+        const blogPostsContainer = document.querySelector(".blog-posts");
+        blogPostsContainer.innerHTML = ""; // Clear existing posts
+        postsArray.forEach(post => blogPostsContainer.appendChild(post)); // Append sorted posts
+    };
+
+    // Call sortByDate on page load
+    sortByDate();
+});

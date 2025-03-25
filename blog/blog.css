@@ -36,6 +36,16 @@ p {
     padding: 20px;
 }
 
+.sort-container {
+    margin-bottom: 20px;
+    font-family: 'Nunito', sans-serif;
+}
+
+#sort-by {
+    padding: 5px;
+    font-size: 14px;
+    font-family: 'Nunito', sans-serif;
+}
 
 .blog-sidebar {
     width: 25%;
@@ -97,6 +107,13 @@ p {
 .blog-post p {
     font-size: 14px;
     margin-bottom: 10px;
+}
+
+.post-meta {
+    font-size: 12px;
+    color: #888;
+    margin-top: 5px;
+    font-family: 'Nunito', sans-serif;
 }
 
 .read-more {
