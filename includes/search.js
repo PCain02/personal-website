@@ -55,10 +55,11 @@ document.addEventListener("DOMContentLoaded", function () {
             const topic = button.getAttribute("data-topic");
 
             blogPosts.forEach(post => {
-                if (topic === "all" || post.getAttribute("data-topic") === topic) {
-                    post.style.display = "block";
+                const postTopics = post.getAttribute("data-topic").split(" "); // Split topics into an array
+                if (topic === "all" || postTopics.includes(topic)) {
+                    post.classList.remove("hidden"); // Show the post
                 } else {
-                    post.style.display = "none";
+                    post.classList.add("hidden"); // Hide the post
                 }
             });
         });
@@ -74,13 +75,11 @@ document.addEventListener("DOMContentLoaded", () => {
             const topic = button.getAttribute("data-topic");
 
             blogPosts.forEach(post => {
-                const postTopic = post.getAttribute("data-topic");
-
-                // Show or hide posts based on the selected topic
-                if (topic === "all" || postTopic === topic) {
-                    post.style.display = "block";
+                const postTopics = post.getAttribute("data-topic").split(" "); // Split topics into an array
+                if (topic === "all" || postTopics.includes(topic)) {
+                    post.classList.remove("hidden"); // Show the post
                 } else {
-                    post.style.display = "none";
+                    post.classList.add("hidden"); // Hide the post
                 }
             });
         });
