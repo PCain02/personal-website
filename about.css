@@ -121,10 +121,13 @@ p {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
+    flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
+    gap: 20px; /* Adds spacing between columns */
 }
 
 .skills-column {
-    width: 45%;
+    width: calc(50% - 20px); /* Adjusts width to fit two columns with spacing */
+    box-sizing: border-box; /* Ensures padding and border are included in width */
 }
 
 .skills-column h2, .skills-column h3 {
@@ -137,8 +140,12 @@ p {
 }
 
 .skills-column ul li {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    word-wrap: break-word; /* Ensures long words break to the next line */
+    overflow-wrap: break-word; /* Adds support for modern browsers */
+    line-height: 1.5; /* Improves readability for wrapped text */
 }
+
 
 @media (max-width: 768px) {
     .home-top-text h1 {
@@ -176,7 +183,7 @@ p {
     }
 
     .skills-column {
-        width: 90%;
+        width: 100%; /* Stacks columns on smaller screens */
         margin-bottom: 20px;
     }
 }
