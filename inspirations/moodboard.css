@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    overflow: hidden; /* Prevent scrolling */
+    overflow-x: hidden;
+    width: 100%;
+    margin-left: 30px;
+}
+
+h3 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    color: #4F868D;
+    white-space: nowrap;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    white-space: nowrap;
+    margin-left: 30px;
+}
+
+/* Style for the Back to project button */
+.back-to-project {
+    text-align: left;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+.back-to-project .button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'Nunito', sans-serif;
+    color: #fff;
+    background-color: #4F868D;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 1vh;
+}
+
+.moodboard-container {
+    position: relative;
+    width: 90%;
+    height: 80vh; /* Adjust the height as needed */
+    background-color: #ccc;
+}
+
+.moodboard {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.draggable {
+    position: absolute;
+    width: 150px;
+    cursor: grab;
+    user-select: none;
+}
+
+.draggable:active {
+    cursor: grabbing;
+}
+
+.back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    background-color: #4F868D;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.back-button:hover {
+    background-color: #3A6B75;
+}
