@@ -403,7 +403,7 @@ p, ul, li {
     }
 
     .blog-sidebar {
-        width: 100%; /* Full width for the sidebar */
+        width: 95%; /* Full width for the sidebar */
         margin-bottom: 20px;
     }
 
@@ -416,18 +416,13 @@ p, ul, li {
         align-items: flex-start;
     }
 
-    .blog-thumbnail {
-        width: 100%; /* Make the thumbnail full width */
-        margin-top: 10px;
-    }
-
     .blog-post-container {
         flex-direction: column; /* Stack TOC and content vertically */
         padding: 10px; /* Add padding around the container */
     }
 
     .blog-toc {
-        width: 100%; /* Full width for the TOC */
+        width: 70%; /* Full width for the TOC */
         margin-bottom: 20px;
         padding: 10px; /* Add padding for better spacing */
         position: static; /* Remove sticky behavior on small screens */
@@ -456,8 +451,9 @@ p, ul, li {
     }
 
     .blog-thumbnail {
-        width: 100%; /* Make the thumbnail full width */
+        width: 60%; /* Make the thumbnail full width */
         margin-top: 10px;
+        align-self: center; /* Center the thumbnail */
     }
 
     .blog-thumbnail img {
