@@ -176,14 +176,6 @@ body .additional-background {
         width: 90%;
     }
 
-    .project-box {
-        width: 80%;
-    }
-
-    .project-image img {
-        width: 80%; /* Adjust the image width for smaller screens */
-    }
-
     body::before {
         width: 200px; /* Adjust the width for smaller screens */
         height: 200px; /* Adjust the height for smaller screens */
@@ -287,22 +279,24 @@ body .additional-background {
 
 /* Featured Projects */
 .featured-projects-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the container horizontally */
+    justify-content: center; /* Center the container vertically */
     width: 100%;
-}
-
-.featured-projects-heading {
-    text-align: center;
-    font-size: 36px; 
-    margin-top: 40px;
+    margin: 0 auto; /* Center the container horizontally */
+    text-align: center; /* Center the text inside */
 }
 
 .featured-projects {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    flex-direction: column; /* Stack the project boxes vertically */
+    align-items: center; /* Center the project boxes horizontally */
+    justify-content: center; /* Center the project boxes vertically */
+    gap: 20px; /* Add spacing between project boxes */
     margin-top: 20px;
     margin-bottom: 20px;
+    width: 100%; /* Ensure it takes up the full width */
 }
 
 .project-box {
@@ -376,7 +370,7 @@ body .additional-background {
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .project-box {
-        flex-direction: column;
+        flex-direction: column; /* Stack content vertically on smaller screens */
         width: 80%; /* Adjust the width for smaller screens */
         text-align: center;
     }
@@ -387,7 +381,20 @@ body .additional-background {
     }
 
     .project-image img {
-        width: 80%; /* Adjust the image width for smaller screens */
+        width: 50%; /* Adjust the image width for smaller screens */
+    }
+
+    .featured-projects-container {
+        padding: 0 10px; /* Add padding for smaller screens */
+    }
+
+    .featured-projects {
+        width: 90%; /* Reduce the width for smaller screens */
+    }
+
+    .project-text {
+        padding-right: 0;
+        margin-bottom: 20px;
     }
 }
 
@@ -400,4 +407,15 @@ body .additional-background {
         width: 60%; /* Adjust the image width for very small screens */
     }
 
+    .featured-projects {
+        width: 100%; /* Full width for very small screens */
+    }
+
+    .project-box {
+        width: 100%; /* Full width for project boxes */
+    }
+
+    .project-image img {
+        width: 60%; /* Adjust the image width for very small screens */
+    }
 }

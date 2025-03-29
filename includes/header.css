@@ -87,23 +87,45 @@ a {
 
 @media (max-width: 768px) {
     .navbar {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: column; /* Stack elements vertically */
+        text-align: center; /* Center-align text */
+        align-items: center; /* Center all child elements */
+    }
+
+    .logo {
+        margin-bottom: 10px; /* Add spacing below the logo */
+    }
+
+    .site-name {
+        font-size: 20px; /* Adjust font size for better visibility */
+        margin-bottom: 10px; /* Add spacing below the site name */
+        text-align: center; /* Ensure the text is centered */
+    }
+
+    .search-bar {
+        width: 100%; /* Make the search bar take full width */
+        display: flex;
+        justify-content: center; /* Center the search bar horizontally */
+        margin-bottom: 10px; /* Add spacing below the search bar */
     }
 
     .search-bar input {
-        width: 100%;
+        width: 80%; /* Adjust the width of the search input */
+        max-width: 300px; /* Set a maximum width for the input */
     }
 
     .nav-links {
-        flex-direction: column;
-        gap: 10px;
-        padding: 10px;
+        flex-direction: column; /* Stack navigation links vertically */
+        gap: 5px; /* Reduce spacing between links */
+        padding: 0; /* Remove extra padding */
+        width: auto; /* Remove full width to make links smaller */
     }
 
     .nav-links li {
         display: block;
-        text-align: center;
-        width: 100%;
+        text-align: center; /* Center-align the navigation links */
+        padding: 5px 10px; /* Reduce padding for smaller links */
+        font-size: 14px; /* Reduce font size for smaller screens */
+        width: auto; /* Remove full width to make links smaller */
     }
 }
