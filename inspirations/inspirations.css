@@ -1,0 +1,421 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+h3 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    color: #4F868D;
+    white-space: nowrap;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    white-space: nowrap;
+}
+
+p {
+    font-family: 'Nunito', sans-serif;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+/* Container for the text and image */
+.home-container {
+    display: flex;
+    align-items: center; /* Vertically centers the content */
+    justify-content: flex-start;
+    padding: 20px;
+    gap: 20px; /* Space between the text and the image */
+    flex-wrap: wrap; /* Allows wrapping if the screen size is too small */
+}
+
+.home-image img {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.home-top-text {
+    max-width: 60%;
+    word-wrap: break-word; 
+}
+
+.home-top-text h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.home-top-text h3 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.home-top-text p {
+    font-size: 16px;
+    margin: 0;
+}
+
+
+/* Background Images */
+body::before, body::after {
+    content: "";
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1; /* Ensure it is behind other content */
+}
+
+body::before {
+    background-image: url('assets/images/web-design-me.png');
+    background-position: top right;
+    width: 600px; /* Adjust the width as needed */
+    height: 600px; /* Adjust the height as needed */
+    top: 0;
+    right: 0;
+    position: fixed;
+}
+
+body::after {
+    background-image: url('assets/images/purple-blob1.png'); /* Replace with your image path */
+    background-position: bottom left;
+    width: 500px; /* Adjust the width as needed */
+    height: 800px; /* Adjust the height as needed */
+    bottom: -50px; /* Adjust the bottom position as needed */
+    left: -50px; /* Adjust the left position as needed */
+}
+
+/* Additional Background Image */
+body::before, body::after, body .additional-background {
+    content: "";
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1; /* Ensure it is behind other content */
+}
+
+body .additional-background {
+    background-image: url('assets/images/purple-blob1.png'); /* Replace with your image path */
+    background-position: center left;
+    width: 400px; /* Adjust the width as needed */
+    height: 400px; /* Adjust the height as needed */
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+
+/* Blob Background for Featured Projects */
+.blob-background {
+    position: absolute;
+    background-image: url('assets/images/purple-blob2.png'); /* Replace with your image path */
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 500px; /* Adjust the width as needed */
+    height: 500px; /* Adjust the height as needed */
+    bottom: -1000px; /* Adjust the bottom position as needed */
+    right: -10px; /* Adjust the right position as needed */
+    z-index: -1; /* Ensure it is behind the featured projects */
+}
+
+
+/* Back to Top Link */
+.back-to-top-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.back-to-top {
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    color: #4F868D;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.back-to-top:hover {
+    color: #3A6B75;
+}
+
+/* Responsive font sizes and layout adjustments */
+@media (max-width: 768px) {
+    .home-top-text h1 {
+        font-size: 30px; 
+    }
+    .home-top-text h3 {
+        font-size: 22px;
+    }
+    .home-top-text p {
+        font-size: 14px;
+    }
+
+    .home-image img {
+        width: 150px; 
+    }
+
+    .home-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-top-text {
+        max-width: 90%; 
+    }
+
+    .button {
+        font-size: 14px;
+        padding: 8px 16px;
+        margin: 5px;
+    }
+
+    .featured-projects {
+        width: 90%;
+    }
+
+    body::before {
+        width: 200px; /* Adjust the width for smaller screens */
+        height: 200px; /* Adjust the height for smaller screens */
+    }
+
+    body::after {
+        width: 150px; /* Adjust the width for smaller screens */
+        height: 150px; /* Adjust the height for smaller screens */
+    }
+
+    body .additional-background {
+        width: 200px; /* Adjust the width for smaller screens */
+        height: 200px; /* Adjust the height for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .home-top-text h1 {
+        font-size: 24px;
+    }
+    .home-top-text h3 {
+        font-size: 18px; 
+    }
+    .home-top-text p {
+        font-size: 12px; 
+    }
+
+    .home-image img {
+        width: 120px; 
+    }
+
+    .home-top-text {
+        max-width: 100%; 
+    }
+
+    .button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .featured-projects {
+        width: 100%;
+    }
+
+    .project-box {
+        width: 100%;
+    }
+
+    .project-image img {
+        width: 60%; /* Adjust the image width for very small screens */
+    }
+
+    body::before {
+        width: 150px; /* Adjust the width for smaller screens */
+        height: 150px; /* Adjust the height for smaller screens */
+    }
+
+    body::after {
+        width: 100px; /* Adjust the width for smaller screens */
+        height: 100px; /* Adjust the height for smaller screens */
+    }
+
+    body .additional-background {
+        width: 150px; /* Adjust the width for smaller screens */
+        height: 150px; /* Adjust the height for smaller screens */
+    }
+}
+
+.button-container {
+    margin-top: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.download-button {
+    background-color: #FDC435;
+    color: black;
+    border: 2px solid #FDC435;
+}
+
+.linkedin-button {
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    border: 2px solid rgb(0, 0, 0);
+    margin-left: 10px;
+}
+
+.button:hover {
+    background-color: black;
+    color:  #FDC435;
+}
+
+/* Featured Projects */
+.featured-projects-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the container horizontally */
+    justify-content: center; /* Center the container vertically */
+    width: 100%;
+    margin: 0 auto; /* Center the container horizontally */
+    text-align: center; /* Center the text inside */
+}
+
+.featured-projects {
+    display: flex;
+    flex-direction: column; /* Stack the project boxes vertically */
+    align-items: center; /* Center the project boxes horizontally */
+    justify-content: center; /* Center the project boxes vertically */
+    gap: 20px; /* Add spacing between project boxes */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%; /* Ensure it takes up the full width */
+}
+
+.project-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%; /* Set the width to 50% of the screen */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.project-box.type1 .project-text {
+    order: 1;
+    text-align: left;
+}
+
+.project-box.type1 .project-image {
+    order: 2;
+    text-align: right;
+}
+
+.project-box.type2 .project-text {
+    order: 2;
+    text-align: right;
+}
+
+.project-box.type2 .project-image {
+    order: 1;
+    text-align: left;
+}
+
+.project-text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.project-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.project-image img {
+    width: 100%; /* Set the image width to 100% of the project image container */
+    height: auto;
+    border-radius: 8px;
+}
+
+.view-project-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    background-color: #4F868D;
+    color: white;
+    border: 2px solid #4F868D;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 10px;
+}
+
+.view-project-button:hover {
+    background-color: #3A6B75;
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .project-box {
+        flex-direction: column; /* Stack content vertically on smaller screens */
+        width: 80%; /* Adjust the width for smaller screens */
+        text-align: center;
+    }
+
+    .project-text {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .project-image img {
+        width: 50%; /* Adjust the image width for smaller screens */
+    }
+
+    .featured-projects-container {
+        padding: 0 10px; /* Add padding for smaller screens */
+    }
+
+    .featured-projects {
+        width: 90%; /* Reduce the width for smaller screens */
+    }
+
+    .project-text {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-box {
+        width: 100%; /* Full width for very small screens */
+    }
+
+    .project-image img {
+        width: 60%; /* Adjust the image width for very small screens */
+    }
+
+    .featured-projects {
+        width: 100%; /* Full width for very small screens */
+    }
+
+    .project-box {
+        width: 100%; /* Full width for project boxes */
+    }
+
+    .project-image img {
+        width: 60%; /* Adjust the image width for very small screens */
+    }
+}
