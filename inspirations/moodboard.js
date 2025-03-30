@@ -16,19 +16,20 @@ document.addEventListener("DOMContentLoaded", () => {
         draggable.addEventListener("mousedown", (e) => {
             e.preventDefault(); // Prevent default behavior
 
+            // Calculate the offset between the mouse pointer and the draggable element
             const shiftX = e.clientX - draggable.getBoundingClientRect().left;
             const shiftY = e.clientY - draggable.getBoundingClientRect().top;
 
-            const moveAt = (pageX, pageY) => {
+            const moveAt = (clientX, clientY) => {
                 const moodboardRect = moodboard.getBoundingClientRect();
 
                 // Calculate new positions relative to the moodboard container
                 const newX = Math.min(
-                    Math.max(0, pageX - shiftX - moodboardRect.left),
+                    Math.max(0, clientX - shiftX - moodboardRect.left),
                     moodboardRect.width - draggable.offsetWidth
                 );
                 const newY = Math.min(
-                    Math.max(0, pageY - shiftY - moodboardRect.top),
+                    Math.max(0, clientY - shiftY - moodboardRect.top),
                     moodboardRect.height - draggable.offsetHeight
                 );
 
@@ -36,8 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 draggable.style.top = `${newY}px`;
             };
 
+            // Move the element to the mouse position on `mousemove`
             const onMouseMove = (e) => {
-                moveAt(e.pageX, e.pageY);
+                moveAt(e.clientX, e.clientY);
             };
 
             // Attach the `mousemove` event to the document for smooth dragging
