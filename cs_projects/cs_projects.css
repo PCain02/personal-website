@@ -31,7 +31,7 @@ p, ul, li {
     word-wrap: break-word;
 }
 
-.blog-container {
+.project-container {
     display: flex;
     gap: 20px;
     padding: 20px;
@@ -48,24 +48,24 @@ p, ul, li {
     font-family: 'Nunito', sans-serif;
 }
 
-.blog-sidebar {
+.project-sidebar {
     width: 25%;
     background-color: #f4f4f4;
     padding: 15px;
     border-radius: 8px;
 }
 
-.blog-sidebar h2 {
+.project-sidebar h2 {
     font-size: 18px;
     margin-bottom: 10px;
 }
 
-.blog-sidebar ul {
+.project-sidebar ul {
     list-style: none;
     padding: 0;
 }
 
-.blog-sidebar li {
+.project-sidebar li {
     margin-bottom: 10px;
 }
 
@@ -85,14 +85,14 @@ p, ul, li {
     background-color: #3E3A5A;
 }
 
-.blog-posts {
+.project-posts {
     width: 75%;
     display: grid;
     grid-template-columns: 1fr; /* Change to a single column */
     gap: 20px;
 }
-/* Blog Post Container */
-.blog-post {
+/* project Post Container */
+.project-post {
     display: flex;
     justify-content: space-between; /* Ensure content and thumbnail are spaced */
     align-items: center; /* Align items vertically */
@@ -105,8 +105,8 @@ p, ul, li {
     position: relative; /* Ensure proper positioning for hidden elements */
 }
 
-/* Blog Thumbnail */
-.blog-thumbnail {
+/* project Thumbnail */
+.project-thumbnail {
     flex-shrink: 0; /* Prevent the thumbnail from shrinking */
     width: 150px; /* Set a fixed width for the thumbnail */
     text-align: center;
@@ -116,22 +116,22 @@ p, ul, li {
     box-shadow: none; /* Remove shadow from the thumbnail */
 }
 
-.blog-thumbnail img {
+.project-thumbnail img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Blog Post Content */
-.blog-post-content {
+/* project Post Content */
+.project-post-content {
     flex: 1; /* Take up remaining space */
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
 
-/* Hidden Blog Posts */
-.blog-post.hidden {
+/* Hidden project Posts */
+.project-post.hidden {
     visibility: hidden; /* Hide the post visually */
     position: absolute; /* Remove it from the layout flow */
     height: 0; /* Collapse its height */
@@ -141,19 +141,19 @@ p, ul, li {
     box-shadow: none; /* Remove shadow */
 }
 
-/* Blog Post Content */
-.blog-post-content {
+/* project Post Content */
+.project-post-content {
     flex: 1; /* Take up remaining space */
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
 
-.blog-post h3 {
+.project-post h3 {
     font-size: 20px;
     margin-bottom: 10px;
 }
 
-.blog-post p {
+.project-post p {
     font-size: 14px;
     margin-bottom: 10px;
 }
@@ -176,26 +176,26 @@ p, ul, li {
     text-decoration: underline;
 }
 
-/* Style for the blog post image */
-.blog-post-image {
+/* Style for the project post image */
+.project-post-image {
     text-align: center;
     margin: 20px 0;
 }
 
-.blog-post-image img {
+.project-post-image img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Style for the Back to Blog button */
-.back-to-blog {
+/* Style for the Back to project button */
+.back-to-project {
     text-align: center;
     margin-top: 30px;
 }
 
-.back-to-blog .button {
+.back-to-project .button {
     display: inline-block;
     padding: 10px 20px;
     font-size: 16px;
@@ -208,7 +208,7 @@ p, ul, li {
     margin-bottom: 1vh;
 }
 
-.back-to-blog .button:hover {
+.back-to-project .button:hover {
     background-color: #3a6b70;
 }
 
@@ -230,8 +230,8 @@ p, ul, li {
     color: #3A6B75;
 }
 
-/* Blog Post Container */
-.blog-post-container {
+/* project Post Container */
+.project-post-container {
     display: flex;
     flex-direction: row-reverse; /* Move TOC to the right */
     gap: 20px;
@@ -239,7 +239,7 @@ p, ul, li {
 }
 
 /* Table of Contents */
-.blog-toc {
+.project-toc {
     flex: 0 0 250px; /* Fixed width for the TOC */
     background-color: #f9f9f9;
     padding: 15px;
@@ -255,36 +255,36 @@ p, ul, li {
     hyphens: auto; /* Add hyphenation for long words if supported */
 }
 
-.blog-toc h2 {
+.project-toc h2 {
     font-size: 18px;
     margin-bottom: 10px;
     font-family: 'Nunito', sans-serif;
     color: #4F868D;
 }
 
-.blog-toc ul {
+.project-toc ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.blog-toc li {
+.project-toc li {
     margin-bottom: 10px;
 }
 
-.blog-toc a {
+.project-toc a {
     text-decoration: none;
     color: #4F868D;
     font-family: 'Nunito', sans-serif;
     font-size: 14px;
 }
 
-.blog-toc a:hover {
+.project-toc a:hover {
     text-decoration: underline;
 }
 
-/* Blog Post Content */
-.blog-post-content {
+/* project Post Content */
+.project-post-content {
     flex: 1; /* Take up remaining space */
     padding: 20px; /* Add padding inside the content area */
     margin: 0; /* Ensure no extra margin is added */
@@ -298,8 +298,8 @@ p, ul, li {
     box-sizing: border-box; /* Include padding in the width calculation */
 }
 
-/* Blog Post Title */
-.blog-post-content h1 {
+/* project Post Title */
+.project-post-content h1 {
     margin-top: 0; /* Remove default margin */
     margin-bottom: 20px; /* Add spacing below the title */
     font-size: 28px; /* Adjust font size for better readability */
@@ -310,8 +310,8 @@ p, ul, li {
     hyphens: auto;
 }
 
-/* Blog Post Text */
-.blog-post-content p {
+/* project Post Text */
+.project-post-content p {
     margin-bottom: 20px; /* Add spacing between paragraphs */
     line-height: 1.6; /* Improve readability */
     font-size: 16px; /* Adjust font size */
@@ -321,13 +321,13 @@ p, ul, li {
     hyphens: auto; /* Add hyphenation for long words if supported */
 }
 
-/* Small Back to Blog Button */
-.back-to-blog-top {
+/* Small Back to project Button */
+.back-to-project-top {
     margin-bottom: 20px;
     padding-left: 20px; /* Add left padding to align with the content */
 }
 
-.back-to-blog-top .small-button {
+.back-to-project-top .small-button {
     display: inline-block;
     padding: 5px 10px;
     font-size: 12px;
@@ -339,12 +339,12 @@ p, ul, li {
     transition: background-color 0.3s ease;
 }
 
-.back-to-blog-top .small-button:hover {
+.back-to-project-top .small-button:hover {
     background-color: #3a6b70;
 }
 
-/* Blog Post Title and Back to Blog Button Container */
-.blog-title-container {
+/* project Post Title and Back to project Button Container */
+.project-title-container {
     display: flex;
     align-items: center; /* Align items vertically */
     justify-content: flex-start; /* Align items to the left */
@@ -352,7 +352,7 @@ p, ul, li {
     margin-bottom: 20px; /* Add spacing below the container */
 }
 
-.blog-title-container h1 {
+.project-title-container h1 {
     margin: 0; /* Remove default margin */
     font-size: 28px; /* Adjust font size for better readability */
     font-family: 'Playfair Display', serif;
@@ -362,7 +362,7 @@ p, ul, li {
     hyphens: auto;
 }
 
-.blog-title-container .small-button {
+.project-title-container .small-button {
     padding: 5px 10px;
     font-size: 12px;
     font-family: 'Nunito', sans-serif;
@@ -373,19 +373,19 @@ p, ul, li {
     transition: background-color 0.3s ease;
 }
 
-.blog-title-container .small-button:hover {
+.project-title-container .small-button:hover {
     background-color: #3a6b70;
 }
 
 /* Ensure the title and other headings wrap properly */
-.blog-post-content h2, .blog-post-content h3 {
+.project-post-content h2, .project-post-content h3 {
     word-wrap: break-word;
     overflow-wrap: break-word;
     hyphens: auto;
 }
 
 /* Ensure the title and other headings wrap properly */
-.blog-post-content h1, .blog-post-content h2, .blog-post-content h3 {
+.project-post-content h1, .project-post-content h2, .project-post-content h3 {
     word-wrap: break-word;
     overflow-wrap: break-word;
     hyphens: auto;
@@ -394,34 +394,34 @@ p, ul, li {
 
 /* Single column layout for smaller screens */
 @media (max-width: 1024px) {
-    .blog-posts {
+    .project-posts {
         grid-template-columns: 1fr; /* Single column */
     }
 
-    .blog-container {
+    .project-container {
         flex-direction: column; /* Stack sidebar and posts vertically */
     }
 
-    .blog-sidebar {
+    .project-sidebar {
         width: 95%; /* Full width for the sidebar */
         margin-bottom: 20px;
     }
 
-    .blog-posts {
+    .project-posts {
         width: 100%; /* Full width for the posts */
     }
 
-    .blog-post {
+    .project-post {
         flex-direction: column; /* Stack the text and thumbnail vertically */
         align-items: flex-start;
     }
 
-    .blog-post-container {
+    .project-post-container {
         flex-direction: column; /* Stack TOC and content vertically */
         padding: 10px; /* Add padding around the container */
     }
 
-    .blog-toc {
+    .project-toc {
         width: 70%; /* Full width for the TOC */
         margin-bottom: 20px;
         padding: 10px; /* Add padding for better spacing */
@@ -430,33 +430,33 @@ p, ul, li {
         overflow-y: visible; /* Remove scrolling for small screens */
     }
 
-    .blog-post-content {
+    .project-post-content {
         width: 100%; /* Full width for the content */
         padding: 15px; /* Reduce padding for smaller screens */
         margin: 0; /* Remove any extra margins */
     }
 
-    .blog-title-container {
+    .project-title-container {
         flex-direction: column; /* Stack title and button vertically */
         align-items: flex-start; /* Align items to the left */
         gap: 10px; /* Add spacing between the title and button */
     }
 
-    .blog-title-container h1 {
+    .project-title-container h1 {
         font-size: 24px; /* Adjust font size for smaller screens */
     }
 
-    .back-to-blog-top {
+    .back-to-project-top {
         padding-left: 0; /* Remove left padding for smaller screens */
     }
 
-    .blog-thumbnail {
+    .project-thumbnail {
         width: 60%; /* Make the thumbnail full width */
         margin-top: 10px;
         align-self: center; /* Center the thumbnail */
     }
 
-    .blog-thumbnail img {
+    .project-thumbnail img {
         width: 50%; /* Ensure the image still fills the container */
         height: 100%; /* Maintain the aspect ratio */
     }
