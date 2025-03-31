@@ -131,3 +131,70 @@ document.addEventListener("DOMContentLoaded", () => {
     // Default sort on page load (newest first)
     sortBlogPosts("newest");
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const filterButtons = document.querySelectorAll(".filter-button");
+    const projectPosts = document.querySelectorAll(".project-post");
+
+    filterButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const topic = button.getAttribute("data-topic");
+
+            projectPosts.forEach(post => {
+                const postTopics = post.getAttribute("data-topic").split(" "); // Split topics into an array
+                if (topic === "all" || postTopics.includes(topic)) {
+                    post.classList.remove("hidden"); // Show the post
+                } else {
+                    post.classList.add("hidden"); // Hide the post
+                }
+            });
+        });
+    });
+
+    // Example: Add sorting by date (newest first)
+    const sortByDate = () => {
+        const postsArray = Array.from(projectPosts);
+        postsArray.sort((a, b) => {
+            const dateA = new Date(a.getAttribute("data-date"));
+            const dateB = new Date(b.getAttribute("data-date"));
+            return dateB - dateA; // Newest first
+        });
+
+        const projectPostsContainer = document.querySelector(".project-posts");
+        projectPostsContainer.innerHTML = ""; // Clear existing posts
+        postsArray.forEach(post => projectPostsContainer.appendChild(post)); // Append sorted posts
+    };
+
+    // Call sortByDate on page load
+    sortByDate();
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const sortByDropdown = document.getElementById("sort-by");
+    const projectPostsContainer = document.querySelector(".project-posts");
+    const projectPosts = Array.from(document.querySelectorAll(".project-post"));
+
+    // Function to sort project posts
+    const sortprojectPosts = (order) => {
+        const sortedPosts = projectPosts.sort((a, b) => {
+            const dateA = new Date(a.getAttribute("data-date"));
+            const dateB = new Date(b.getAttribute("data-date"));
+
+            return order === "newest" ? dateB - dateA : dateA - dateB;
+        });
+
+        // Clear and re-append sorted posts
+        projectPostsContainer.innerHTML = "";
+        sortedPosts.forEach(post => projectPostsContainer.appendChild(post));
+    };
+
+    // Event listener for the dropdown
+    sortByDropdown.addEventListener("change", (event) => {
+        const selectedOrder = event.target.value;
+        sortprojectPosts(selectedOrder);
+    });
+
+    // Default sort on page load (newest first)
+    sortprojectPosts("newest");
+});

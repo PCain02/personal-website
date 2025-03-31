@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
         draggable.addEventListener("mousedown", (e) => {
             e.preventDefault(); // Prevent default behavior
 
-            // Calculate the offset between the mouse pointer and the draggable element
             const shiftX = e.clientX - draggable.getBoundingClientRect().left;
             const shiftY = e.clientY - draggable.getBoundingClientRect().top;
 
@@ -37,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 draggable.style.top = `${newY}px`;
             };
 
-            // Move the element to the mouse position on `mousemove`
             const onMouseMove = (e) => {
                 moveAt(e.clientX, e.clientY);
             };

@@ -84,3 +84,38 @@ h1 {
 .back-button:hover {
     background-color: #3A6B75;
 }
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+
+
+    .draggable {
+        width: 100px; /* Shrink images for smaller screens */
+    }
+
+
+    h1 {
+        font-size: 24px; /* Adjust heading size for smaller screens */
+    }
+
+    .back-to-project .button {
+        font-size: 14px; /* Adjust button size for smaller screens */
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .draggable {
+        width: 80px; /* Further shrink images for very small screens */
+    }
+
+    h1 {
+        font-size: 20px; /* Adjust heading size for very small screens */
+    }
+
+    .back-to-project .button {
+        font-size: 12px; /* Adjust button size for very small screens */
+        padding: 6px 12px;
+    }
+}
