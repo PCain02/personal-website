@@ -119,15 +119,16 @@ p {
 
 .skills-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start; /* Keep columns aligned to the left */
     margin-top: 20px;
-    flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
+    padding-left: 40px; /* Add more space on the left */
     gap: 20px; /* Adds spacing between columns */
 }
 
 .skills-column {
     width: calc(50% - 20px); /* Adjusts width to fit two columns with spacing */
     box-sizing: border-box; /* Ensures padding and border are included in width */
+    text-align: left; /* Align text to the left inside the columns */
 }
 
 .skills-column h2, .skills-column h3 {
