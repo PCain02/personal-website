@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExecExam</title>
+    <link rel="stylesheet" href= "cs_projects.css">
+    <script src="/includes/header.js" defer></script>
+    <script src="/includes/footer.js" defer></script>
+    <script src="/includes/search.js" defer></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <div id="header-container"></div>
+
+    <!-- project Post Content -->
+    <div class="project-post-container">
+        <!-- Table of Contents -->
+        <aside class="project-toc">
+            <h2>Table of Contents</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#what-is-execexam">What is ExecExam?</a></li>
+                <li><a href="#my-contributions">My Contributions to ExecExam</a></li>
+                <li><a href="#impact-on-education">Impact on Education</a></li>
+                <li><a href="#pycon-2025">PyCon 2025 Poster Session</a></li>
+                <li><a href="#conclusion">Conclusion</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main project Content -->
+        <article class="project-post-content">
+            <h1>ExecExam</h1>
+            <p class="post-meta">Topic: Software Engineering | Date: March 27, 2025</p>
+            <div class="back-to-project-top">
+                <a href="index.html" class="button small-button">Back to CS Projects</a>
+            </div>
+
+            <div class="project-post-image">
+                <img src="images/execexam.jpg" alt="ExecExam in Action">
+            </div>
+
+            <h2 id="introduction">Introduction</h2>
+            <p>
+                Software engineering is not just about writing code; it’s about solving real-world problems with technology. 
+                One such challenge is providing scalable and effective feedback for programming students. 
+                ExecExam is a tool that tackles this issue head-on, automating Python assessments and enhancing learning experiences. 
+                In this post, I’ll discuss my contributions to the project, particularly with LiteLLM, and how ExecExam is now used at Allegheny College to support education.
+            </p>
+
+            <h2 id="what-is-execexam">What is ExecExam?</h2>
+            <p>
+                ExecExam is an automated assessment tool for Python programming tasks. It integrates with Pytest to test student code, 
+                providing detailed feedback on errors and improvements. More than just a testing framework, ExecExam offers enhanced 
+                educational support through large language models (LLMs), which analyze failing test cases and offer step-by-step suggestions for fixes.
+            </p>
+
+            <h2 id="my-contributions">My Contributions to ExecExam</h2>
+            <p>
+                My primary contribution to ExecExam was the integration of <strong>LiteLLM</strong>, a lightweight API for interacting with various LLM providers. 
+                By incorporating LiteLLM, we made it possible for students to receive context-aware, AI-driven feedback directly in their assessments.
+            </p>
+            <p>
+                This feature ensures that instead of just showing test failures, ExecExam provides tailored suggestions on why the failure happened and 
+                how to fix it. This significantly enhances the learning experience by encouraging students to think critically about their mistakes rather than just trial-and-error debugging.
+            </p>
+
+            <h2 id="impact-on-education">Impact on Education</h2>
+            <p>
+                ExecExam is currently used at Allegheny College to assist both students and educators. With the LiteLLM integration, 
+                students can better understand their mistakes, and instructors can track common problem areas across their classes. 
+                The tool streamlines grading while fostering a more interactive and personalized learning environment.
+            </p>
+            <p>
+                By reducing the time spent manually reviewing code, instructors can focus on mentoring students rather than debugging their submissions. 
+                Meanwhile, students benefit from instant, constructive feedback, which enhances their learning and problem-solving skills.
+            </p>
+
+            <h2 id="pycon-2025">PyCon 2025 Poster Session</h2>
+            <p>
+                I’m thrilled to share that ExecExam has been selected for a <strong>poster session at PyCon 2025</strong>! Our team will present how ExecExam enhances Python education through automation and AI-driven feedback. This opportunity allows us to showcase our work to a broader audience, discuss improvements, and explore future integrations. If you're attending PyCon, be sure to stop by our session!
+            </p>
+            <h2 id="conclusion">Conclusion</h2>
+            <p>
+                Contributing to ExecExam has been an exciting journey in software engineering and educational technology. 
+                Seeing the tool adopted for real-world use at Allegheny College is incredibly rewarding. 
+                As we continue refining ExecExam, I hope it will serve as an example of how AI can be leveraged to improve education and software development.
+            </p>
+            <p>
+                If you're interested in the project, check out the source code on <a href="https://github.com/GatorEducator/execexam" target="_blank">GitHub</a>!
+            </p>
+
+            <!-- Back to project Button -->
+            <div class="back-to-project">
+                <a href="index.html" class="button">Back to project</a>
+            </div>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <div id="site-footer"></div>
+
+</body>
+</html>

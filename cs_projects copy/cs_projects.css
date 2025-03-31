@@ -1,0 +1,463 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+h3 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    color: #4F868D;
+    white-space: nowrap;
+}
+
+h2 {
+    font-family: 'Nunito', sans-serif;
+    color: #4F868D;
+    white-space: nowrap;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    white-space: nowrap;
+    color: black !important;
+}
+
+p, ul, li {
+    font-family: 'Nunito', sans-serif;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.project-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.sort-container {
+    margin-bottom: 20px;
+    font-family: 'Nunito', sans-serif;
+}
+
+#sort-by {
+    padding: 5px;
+    font-size: 14px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.project-sidebar {
+    width: 25%;
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.project-sidebar h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.project-sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.project-sidebar li {
+    margin-bottom: 10px;
+}
+
+.filter-button {
+    background-color: #A79AB2;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    font-family: 'Nunito', sans-serif;
+}
+
+.filter-button:hover {
+    background-color: #3E3A5A;
+}
+
+.project-posts {
+    width: 75%;
+    display: grid;
+    grid-template-columns: 1fr; /* Change to a single column */
+    gap: 20px;
+}
+/* project Post Container */
+.project-post {
+    display: flex;
+    justify-content: space-between; /* Ensure content and thumbnail are spaced */
+    align-items: center; /* Align items vertically */
+    gap: 15px; /* Add spacing between the thumbnail and text */
+    background-color: #ffffff;
+    border: 1px solid #ddd; /* Single border for the entire post */
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Single shadow for the entire post */
+    position: relative; /* Ensure proper positioning for hidden elements */
+}
+
+/* project Thumbnail */
+.project-thumbnail {
+    flex-shrink: 0; /* Prevent the thumbnail from shrinking */
+    width: 150px; /* Set a fixed width for the thumbnail */
+    text-align: center;
+    margin: 0; /* Remove extra margin */
+    border-radius: 8px; /* Keep rounded corners for the thumbnail */
+    overflow: hidden; /* Ensure the image stays within the rounded corners */
+    box-shadow: none; /* Remove shadow from the thumbnail */
+}
+
+.project-thumbnail img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* project Post Content */
+.project-post-content {
+    flex: 1; /* Take up remaining space */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Hidden project Posts */
+.project-post.hidden {
+    visibility: hidden; /* Hide the post visually */
+    position: absolute; /* Remove it from the layout flow */
+    height: 0; /* Collapse its height */
+    margin: 0; /* Remove any margin */
+    padding: 0; /* Remove padding */
+    border: none; /* Remove border */
+    box-shadow: none; /* Remove shadow */
+}
+
+/* project Post Content */
+.project-post-content {
+    flex: 1; /* Take up remaining space */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.project-post h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.project-post p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.post-meta {
+    font-size: 12px;
+    color: #888;
+    margin-top: 5px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.read-more {
+    color: #3E3A5A;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Nunito', sans-serif;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+/* Style for the project post image */
+.project-post-image {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.project-post-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the Back to project button */
+.back-to-project {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.back-to-project .button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'Nunito', sans-serif;
+    color: #fff;
+    background-color: #4F868D;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 1vh;
+}
+
+.back-to-project .button:hover {
+    background-color: #3a6b70;
+}
+
+/* Back to Top Link */
+.back-to-top-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.back-to-top {
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    color: #4F868D;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.back-to-top:hover {
+    color: #3A6B75;
+}
+
+/* project Post Container */
+.project-post-container {
+    display: flex;
+    flex-direction: row-reverse; /* Move TOC to the right */
+    gap: 20px;
+    position: relative;
+}
+
+/* Table of Contents */
+.project-toc {
+    flex: 0 0 250px; /* Fixed width for the TOC */
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Enable sticky positioning */
+    top: 20px; /* Distance from the top of the viewport */
+    height: fit-content;
+    max-height: calc(100vh - 40px); /* Prevents the TOC from exceeding the viewport height */
+    overflow-y: auto; /* Enable vertical scrolling if the content is too long */
+    word-wrap: break-word; /* Break long words to prevent overflow */
+    overflow-wrap: break-word; /* Ensure compatibility with modern browsers */
+    hyphens: auto; /* Add hyphenation for long words if supported */
+}
+
+.project-toc h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-family: 'Nunito', sans-serif;
+    color: #4F868D;
+}
+
+.project-toc ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.project-toc li {
+    margin-bottom: 10px;
+}
+
+.project-toc a {
+    text-decoration: none;
+    color: #4F868D;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+}
+
+.project-toc a:hover {
+    text-decoration: underline;
+}
+
+/* project Post Content */
+.project-post-content {
+    flex: 1; /* Take up remaining space */
+    padding: 20px; /* Add padding inside the content area */
+    margin: 0; /* Ensure no extra margin is added */
+    background-color: #ffffff; /* Optional: Ensure a clean background */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    word-wrap: break-word; /* Break long words to prevent overflow */
+    overflow-wrap: break-word; /* Ensure compatibility with modern browsers */
+    hyphens: auto; /* Add hyphenation for long words if supported */
+    margin: 0 auto; /* Center the content */
+    max-width: 100%; /* Prevent the content from exceeding the screen width */
+    box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+/* project Post Title */
+.project-post-content h1 {
+    margin-top: 0; /* Remove default margin */
+    margin-bottom: 20px; /* Add spacing below the title */
+    font-size: 28px; /* Adjust font size for better readability */
+    font-family: 'Playfair Display', serif;
+    color: #4F868D;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+/* project Post Text */
+.project-post-content p {
+    margin-bottom: 20px; /* Add spacing between paragraphs */
+    line-height: 1.6; /* Improve readability */
+    font-size: 16px; /* Adjust font size */
+    color: #333; /* Ensure text color is readable */
+    word-wrap: break-word; /* Break long words to prevent overflow */
+    overflow-wrap: break-word; /* Ensure compatibility with modern browsers */
+    hyphens: auto; /* Add hyphenation for long words if supported */
+}
+
+/* Small Back to project Button */
+.back-to-project-top {
+    margin-bottom: 20px;
+    padding-left: 20px; /* Add left padding to align with the content */
+}
+
+.back-to-project-top .small-button {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-family: 'Nunito', sans-serif;
+    color: #fff;
+    background-color: #4F868D;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.back-to-project-top .small-button:hover {
+    background-color: #3a6b70;
+}
+
+/* project Post Title and Back to project Button Container */
+.project-title-container {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: flex-start; /* Align items to the left */
+    gap: 10px; /* Add spacing between the title and button */
+    margin-bottom: 20px; /* Add spacing below the container */
+}
+
+.project-title-container h1 {
+    margin: 0; /* Remove default margin */
+    font-size: 28px; /* Adjust font size for better readability */
+    font-family: 'Playfair Display', serif;
+    color: #4F868D;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+.project-title-container .small-button {
+    padding: 5px 10px;
+    font-size: 12px;
+    font-family: 'Nunito', sans-serif;
+    color: #fff;
+    background-color: #4F868D;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.project-title-container .small-button:hover {
+    background-color: #3a6b70;
+}
+
+/* Ensure the title and other headings wrap properly */
+.project-post-content h2, .project-post-content h3 {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+/* Ensure the title and other headings wrap properly */
+.project-post-content h1, .project-post-content h2, .project-post-content h3 {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    max-width: 100%; /* Prevent headings from exceeding the screen width */
+}
+
+/* Single column layout for smaller screens */
+@media (max-width: 1024px) {
+    .project-posts {
+        grid-template-columns: 1fr; /* Single column */
+    }
+
+    .project-container {
+        flex-direction: column; /* Stack sidebar and posts vertically */
+    }
+
+    .project-sidebar {
+        width: 95%; /* Full width for the sidebar */
+        margin-bottom: 20px;
+    }
+
+    .project-posts {
+        width: 100%; /* Full width for the posts */
+    }
+
+    .project-post {
+        flex-direction: column; /* Stack the text and thumbnail vertically */
+        align-items: flex-start;
+    }
+
+    .project-post-container {
+        flex-direction: column; /* Stack TOC and content vertically */
+        padding: 10px; /* Add padding around the container */
+    }
+
+    .project-toc {
+        width: 70%; /* Full width for the TOC */
+        margin-bottom: 20px;
+        padding: 10px; /* Add padding for better spacing */
+        position: static; /* Remove sticky behavior on small screens */
+        max-height: none; /* Allow the TOC to expand fully */
+        overflow-y: visible; /* Remove scrolling for small screens */
+    }
+
+    .project-post-content {
+        width: 100%; /* Full width for the content */
+        padding: 15px; /* Reduce padding for smaller screens */
+        margin: 0; /* Remove any extra margins */
+    }
+
+    .project-title-container {
+        flex-direction: column; /* Stack title and button vertically */
+        align-items: flex-start; /* Align items to the left */
+        gap: 10px; /* Add spacing between the title and button */
+    }
+
+    .project-title-container h1 {
+        font-size: 24px; /* Adjust font size for smaller screens */
+    }
+
+    .back-to-project-top {
+        padding-left: 0; /* Remove left padding for smaller screens */
+    }
+
+    .project-thumbnail {
+        width: 60%; /* Make the thumbnail full width */
+        margin-top: 10px;
+        align-self: center; /* Center the thumbnail */
+    }
+
+    .project-thumbnail img {
+        width: 50%; /* Ensure the image still fills the container */
+        height: 100%; /* Maintain the aspect ratio */
+    }
+}
