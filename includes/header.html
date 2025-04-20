@@ -9,8 +9,15 @@
             <div class="site-name">Pallas-Athena Cain</div>
         </a>
         <div class="search-bar">
-            <input type="text" id="search-input" placeholder="Search...">
-            <button type="button" id="search-button" style="display: none;">🔍</button>
+            <form id="header-search-form" action="../includes/search.html" method="get">
+                <input 
+                    type="text" 
+                    id="search-input" 
+                    name="q" 
+                    placeholder="Search..." 
+                    aria-label="Search"
+                />
+            </form>
         </div>
         <ul class="nav-links">
             <li><a href="../about.html">About</a></li>

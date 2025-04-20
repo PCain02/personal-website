@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Results</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
     <style>
         .search-bar-container {
             margin: 2rem auto;
@@ -32,32 +32,63 @@
         }
 
         .search-results-container {
-            max-width: 800px;
-            margin: 0 auto 3rem;
-            padding: 0 1rem;
+            width: 100%; /* Make the container span the full width */
+            max-width: none; /* Remove any maximum width restriction */
+            margin: 0 auto; /* Center the container horizontally */
+            padding: 2rem; /* Add internal spacing */
+            background-color: #f9f9f9; /* Match your theme */
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
 
         .search-result-item {
-            background: #f9f9f9;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            border-left: 5px solid #0077cc;
-            border-radius: 5px;
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 6px solid #4F868D; /* Match your theme's primary color */
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .search-result-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .search-result-item a {
+            text-decoration: none;
+            color: #4F868D; /* Match your theme's link color */
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .search-result-item a:hover {
+            text-decoration: underline;
+        }
+
+        .search-result-item p {
+            margin-top: 0.5rem;
+            font-size: 1.2rem;
+            color: #333;
         }
 
         mark {
             background-color: yellow;
             font-weight: bold;
+            color: black;
+        }
+
+        .no-results {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #555;
+            margin-top: 2rem;
         }
     </style>
 </head>
 <body>
     <div id="header-container"></div>
-
-    <div class="search-bar-container">
-        <input type="text" id="search-input" placeholder="Search..." />
-        <button id="search-button">Search</button>
-    </div>
 
     <div class="search-results-container">
         <h1>Search Results</h1>
@@ -67,56 +98,60 @@
     <script src="header.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const searchInput = document.getElementById("search-input");
-            const searchButton = document.getElementById("search-button");
+            const urlParams = new URLSearchParams(window.location.search);
+            const query = urlParams.get('q');
             const searchResultsContainer = document.getElementById("search-results");
 
-            // Load query param if present
-            const urlParams = new URLSearchParams(window.location.search);
-            const queryParam = urlParams.get('q');
+            if (query) {
+                const pagesToSearch = [
+                    { url: "../index.html", name: "Home" },
+                    { url: "../about.html", name: "About" },
+                    { url: "../blog/index.html", name: "Blog" },
+                    { url: "../art_portfolio/index.html", name: "Art Portfolio" },
+                    { url: "../cs_projects/index.html", name: "CS Projects" },
+                    { url: "../inspirations/index.html", name: "Inspirations" }
+                ];
 
-            if (queryParam) {
-                searchInput.value = queryParam;
-                performSearch(queryParam);
-            }
-
-            // Trigger search on button click
-            searchButton.addEventListener("click", () => {
-                const query = searchInput.value.trim();
-                if (query) {
-                    window.location.href = `search.html?q=${encodeURIComponent(query)}`;
-                }
-            });
-
-            // Trigger search on pressing Enter
-            searchInput.addEventListener("keypress", function (event) {
-                if (event.key === "Enter") {
-                    event.preventDefault();
-                    const query = searchInput.value.trim();
-                    if (query) {
-                        window.location.href = `search.html?q=${encodeURIComponent(query)}`;
-                    }
-                }
-            });
-
-            function performSearch(query) {
-                const elements = document.querySelectorAll("h1, h2, h3, p, li");
                 let results = [];
+                let pagesLoaded = 0;
 
-                elements.forEach(element => {
-                    const text = element.textContent.toLowerCase();
-                    if (text.includes(query.toLowerCase())) {
-                        const regex = new RegExp(`(${query})`, "gi");
-                        const highlightedText = element.textContent.replace(regex, `<mark>$1</mark>`);
-                        results.push(`<div class="search-result-item">${highlightedText}</div>`);
-                    }
+                pagesToSearch.forEach(page => {
+                    fetch(page.url)
+                        .then(response => response.text())
+                        .then(html => {
+                            const parser = new DOMParser();
+                            const doc = parser.parseFromString(html, "text/html");
+                            const elements = doc.querySelectorAll("h1, h2, h3, p, li, a");
+
+                            elements.forEach(element => {
+                                const text = element.textContent.toLowerCase();
+                                if (text.includes(query.toLowerCase())) {
+                                    const regex = new RegExp(`(${query})`, "gi");
+                                    const highlightedText = element.textContent.replace(regex, `<mark>$1</mark>`);
+                                    results.push(`
+                                        <div class="search-result-item">
+                                            <a href="${page.url}" target="_self">${page.name}</a>
+                                            <p>${highlightedText}</p>
+                                        </div>
+                                    `);
+                                }
+                            });
+
+                            pagesLoaded++;
+                            if (pagesLoaded === pagesToSearch.length) {
+                                if (results.length > 0) {
+                                    searchResultsContainer.innerHTML = results.join("");
+                                } else {
+                                    searchResultsContainer.innerHTML = "<p class='no-results'>No results found.</p>";
+                                }
+                            }
+                        })
+                        .catch(error => {
+                            console.error(`Error loading page ${page.url}:`, error);
+                        });
                 });
-
-                if (results.length > 0) {
-                    searchResultsContainer.innerHTML = results.join("");
-                } else {
-                    searchResultsContainer.innerHTML = "<p>No results found.</p>";
-                }
+            } else {
+                searchResultsContainer.innerHTML = "<p class='no-results'>Please enter a search query.</p>";
             }
         });
     </script>
