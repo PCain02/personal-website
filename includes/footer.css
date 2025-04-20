@@ -89,3 +89,33 @@
     color: #777;
     font-family: 'Comfortaa', sans-serif;
 }
+
+.thank-you-container {
+    text-align: center;
+    margin-top: 100px;
+    font-family: Arial, sans-serif;
+}
+
+.thank-you-container h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.thank-you-container p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.thank-you-container .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #3A6B75;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.thank-you-container .btn:hover {
+    background-color: #3A6B75;
+}
