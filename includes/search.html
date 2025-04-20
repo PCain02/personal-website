@@ -5,25 +5,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Results</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .search-bar-container {
+            margin: 2rem auto;
+            max-width: 600px;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        #search-input {
+            flex: 1;
+            padding: 0.75rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        #search-button {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            background-color: #0077cc;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .search-results-container {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            padding: 0 1rem;
+        }
+
+        .search-result-item {
+            background: #f9f9f9;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-left: 5px solid #0077cc;
+            border-radius: 5px;
+        }
+
+        mark {
+            background-color: yellow;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <div id="header-container"></div>
+
+    <div class="search-bar-container">
+        <input type="text" id="search-input" placeholder="Search..." />
+        <button id="search-button">Search</button>
+    </div>
+
     <div class="search-results-container">
         <h1>Search Results</h1>
         <div id="search-results"></div>
     </div>
+
     <script src="header.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const urlParams = new URLSearchParams(window.location.search);
-            const query = urlParams.get('q');
+            const searchInput = document.getElementById("search-input");
+            const searchButton = document.getElementById("search-button");
             const searchResultsContainer = document.getElementById("search-results");
 
-            if (query) {
+            // Load query param if present
+            const urlParams = new URLSearchParams(window.location.search);
+            const queryParam = urlParams.get('q');
+
+            if (queryParam) {
+                searchInput.value = queryParam;
+                performSearch(queryParam);
+            }
+
+            // Trigger search on button click
+            searchButton.addEventListener("click", () => {
+                const query = searchInput.value.trim();
+                if (query) {
+                    window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+                }
+            });
+
+            // Trigger search on pressing Enter
+            searchInput.addEventListener("keypress", function (event) {
+                if (event.key === "Enter") {
+                    event.preventDefault();
+                    const query = searchInput.value.trim();
+                    if (query) {
+                        window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+                    }
+                }
+            });
+
+            function performSearch(query) {
                 const elements = document.querySelectorAll("h1, h2, h3, p, li");
                 let results = [];
+
                 elements.forEach(element => {
-                    if (element.textContent.toLowerCase().includes(query.toLowerCase())) {
+                    const text = element.textContent.toLowerCase();
+                    if (text.includes(query.toLowerCase())) {
                         const regex = new RegExp(`(${query})`, "gi");
                         const highlightedText = element.textContent.replace(regex, `<mark>$1</mark>`);
                         results.push(`<div class="search-result-item">${highlightedText}</div>`);
@@ -35,8 +117,6 @@
                 } else {
                     searchResultsContainer.innerHTML = "<p>No results found.</p>";
                 }
-            } else {
-                searchResultsContainer.innerHTML = "<p>Please enter a search query.</p>";
             }
         });
     </script>

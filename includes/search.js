@@ -41,8 +41,48 @@ document.addEventListener("DOMContentLoaded", function () {
     searchInput.addEventListener("keypress", function (event) {
         if (event.key === "Enter") {
             event.preventDefault();
-            performSearch();
-        }
+            perfor
+
+    
+    const filterButtons = document.querySelectorAll(".filter-button");
+    const blogPosts = document.querySelectorAll(".blog-post");
+
+    filterButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const topic = button.getAttribute("data-topic");
+
+            blogPosts.forEach(post => {
+                const postTopics = post.getAttribute("data-topic").split(" "); // Split topics into an array
+                if (topic === "all" || postTopics.includes(topic)) {
+                    post.classList.remove("hidden"); // Show the post
+                } else {
+                    post.classList.add("hidden"); // Hide the post
+                }
+            });
+        });
+    });
+mSearch();
+        
+
+    
+    const filterButtons = document.querySelectorAll(".filter-button");
+    const blogPosts = document.querySelectorAll(".blog-post");
+
+    filterButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const topic = button.getAttribute("data-topic");
+
+            blogPosts.forEach(post => {
+                const postTopics = post.getAttribute("data-topic").split(" "); // Split topics into an array
+                if (topic === "all" || postTopics.includes(topic)) {
+                    post.classList.remove("hidden"); // Show the post
+                } else {
+                    post.classList.add("hidden"); // Hide the post
+                }
+            });
+        });
+    });
+}
     });
 
 
@@ -197,4 +237,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Default sort on page load (newest first)
     sortprojectPosts("newest");
+});
+
+// search.js
+document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById("search-input");
+    const searchButton = document.getElementById("search-button");
+
+    function redirectToSearchPage() {
+        const query = searchInput.value.trim();
+        if (query !== "") {
+            window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+        }
+    }
+
+    searchButton?.addEventListener("click", redirectToSearchPage);
+    searchInput?.addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            redirectToSearchPage();
+        }
+    });
 });
