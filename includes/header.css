@@ -44,27 +44,6 @@ a {
     display: inline-block; /* Change this line */
 }
 
-#search-results {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-top: 5px;
-    max-height: 200px;
-    overflow-y: auto;
-    position: absolute;
-    width: 150px;
-    z-index: 1000;
-}
-
-.search-result-item {
-    padding: 5px;
-    cursor: pointer;
-}
-
-.search-result-item:hover {
-    background-color: #f0f0f0;
-}
-
 /* Navigation Styles */
 .nav-links {
     list-style: none;
