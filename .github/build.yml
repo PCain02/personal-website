@@ -1,0 +1,37 @@
+name: Website CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: 'latest'
+
+      - name: Install Node.js (for linting tools)
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install HTMLHint and stylelint
+        run: |
+          npm install -g htmlhint stylelint stylelint-config-standard
+
+      - name: Render Quarto site
+        run: quarto render
+
+      - name: Lint HTML in output
+        run: htmlhint _site/**/*.html || true
+
+      - name: Lint CSS in output
+        run: stylelint "_site/**/*.css" || true
