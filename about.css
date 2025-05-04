@@ -1,10 +1,11 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 
 h3 {
     font-family: Nunito, sans-serif;
     font-size: 18px;
-    color: rgb(79, 134, 141); /* Modern color-function notation */
+    color: rgb(79 134 141); /* Fixed: Modern color-function notation */
     white-space: nowrap;
 }
 
@@ -80,16 +81,16 @@ p {
 }
 
 .download-button {
-    background-color: rgb(253, 196, 53); /* Modern color-function notation */
-    color: rgb(0, 0, 0); /* Modern color-function notation */
-    border: 2px solid rgb(253, 196, 53); /* Modern color-function notation */
+    background-color: rgb(253 196 53); /* Fixed: Modern color-function notation */
+    color: rgb(0 0 0); /* Fixed: Modern color-function notation */
+    border: 2px solid rgb(253 196 53); /* Fixed: Modern color-function notation */
     margin-top: 10px;
 }
 
 .artist-statement-button {
     background-color: transparent;
-    color: rgb(0, 0, 0); /* Modern color-function notation */
-    border: 2px solid rgb(0, 0, 0); /* Modern color-function notation */
+    color: rgb(0 0 0); /* Fixed: Modern color-function notation */
+    border: 2px solid rgb(0 0 0); /* Fixed: Modern color-function notation */
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 10px;
@@ -97,23 +98,23 @@ p {
 
 .linkedin-button {
     background-color: transparent;
-    color: rgb(0, 0, 0); /* Modern color-function notation */
-    border: 2px solid rgb(0, 0, 0); /* Modern color-function notation */
+    color: rgb(0 0 0); /* Fixed: Modern color-function notation */
+    border: 2px solid rgb(0 0 0); /* Fixed: Modern color-function notation */
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 10px;
 }
 
 .github-button {
-    background-color: rgb(253, 196, 53); /* Modern color-function notation */
-    color: rgb(0, 0, 0); /* Modern color-function notation */
-    border: 2px solid rgb(253, 196, 53); /* Modern color-function notation */
+    background-color: rgb(253 196 53); /* Fixed: Modern color-function notation */
+    color: rgb(0 0 0); /* Fixed: Modern color-function notation */
+    border: 2px solid rgb(253 196 53); /* Fixed: Modern color-function notation */
     margin-top: 10px;
 }
 
 .button:hover {
-    background-color: rgb(0, 0, 0); /* Modern color-function notation */
-    color: rgb(253, 196, 53); /* Modern color-function notation */
+    background-color: rgb(0 0 0); /* Fixed: Modern color-function notation */
+    color: rgb(253 196 53); /* Fixed: Modern color-function notation */
 }
 
 .skills-container {
@@ -147,7 +148,7 @@ p {
     line-height: 1.5; /* Improves readability for wrapped text */
 }
 
-@media screen and (max-width: 768px) { /* Updated media feature range notation */
+@media (max-width: 768px) { /* Fixed: Modern media feature range notation */
     .home-top-text h1 {
         font-size: 30px;
     }
@@ -190,7 +191,7 @@ p {
     }
 }
 
-@media screen and (max-width: 480px) { /* Updated media feature range notation */
+@media (max-width: 480px) { /* Fixed: Modern media feature range notation */
     .home-top-text h1 {
         font-size: 24px;
     }
