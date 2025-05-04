@@ -86,7 +86,7 @@ h1 {
 }
 
 /* Responsive Design for Smaller Screens */
-@media screen and (max-width: 768px) {
+@media (width <= 768px) {
     .draggable {
         width: 100px; /* Shrink images for smaller screens */
     }
@@ -101,7 +101,7 @@ h1 {
     }
 }
 
-@media screen and (max-width: 480px) {
+@media (width <= 480px) {
     .draggable {
         width: 80px; /* Further shrink images for very small screens */
     }

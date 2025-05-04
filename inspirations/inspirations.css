@@ -733,7 +733,7 @@ body .additional-background {
 }
 
 /* Media Queries for Smaller Screens */
-@media screen and (max-width: 768px) {
+@media (width <= 768px) {
     h1 {
         font-size: 5vw;
     }
@@ -747,7 +747,7 @@ body .additional-background {
     }
 }
 
-@media screen and (max-width: 480px) {
+@media (width <= 480px) {
     h1 {
         font-size: 6vw;
     }

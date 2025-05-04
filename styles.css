@@ -139,7 +139,7 @@ body .additional-background {
 }
 
 /* Responsive font sizes and layout adjustments */
-@media screen and (max-width: 768px) {
+@media (width <= 768px) {
     .home-top-text h1 {
         font-size: 30px; 
     }
@@ -191,7 +191,7 @@ body .additional-background {
     }
 }
 
-@media screen and (max-width: 480px) {
+@media (width <= 480px) {
     .home-top-text h1 {
         font-size: 24px;
     }
@@ -373,7 +373,7 @@ body .additional-background {
 }
 
 /* Responsive adjustments */
-@media screen and (max-width: 768px) {
+@media (width <= 768px) {
     .project-box {
         flex-direction: column; /* Stack content vertically on smaller screens */
         width: 80%; /* Adjust the width for smaller screens */
@@ -393,7 +393,7 @@ body .additional-background {
     }
 }
 
-@media screen and (max-width: 480px) {
+@media (width <= 480px) {
     .project-box {
         width: 100%; /* Full width for very small screens */
     }
