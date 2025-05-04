@@ -26,4 +26,6 @@ jobs:
         run: htmlhint "**/*.html"
 
       - name: Validate CSS files
-        run: stylelint "**/*.css"
+        run: |
+          # Ensure Stylelint uses the configuration file
+          stylelint "**/*.css"
