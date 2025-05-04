@@ -191,12 +191,6 @@ p, ul, li {
     display: block; /* Ensure the image is treated as a block element */
 }
 
-a{
-    text-decoration: none;
-    color: #4F868D;
-    font-family: 'Nunito', sans-serif;
-}
-
 /* Style for the Back to project button */
 .back-to-project {
     text-align: center;
