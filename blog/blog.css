@@ -124,13 +124,6 @@ p, ul, li {
   box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
 }
 
-/* Blog Post Content */
-.blog-post-content {
-  flex: 1; /* Take up remaining space */
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-
 /* Hidden Blog Posts */
 .blog-post.hidden {
   visibility: hidden; /* Hide the post visually */
@@ -390,6 +383,7 @@ p, ul, li {
 @media (width <= 1024px) {
   .blog-posts {
     grid-template-columns: 1fr; /* Single column */
+    width: 100%; /* Full width for the posts */
   }
 
   .blog-container {
@@ -399,10 +393,6 @@ p, ul, li {
   .blog-sidebar {
     width: 95%; /* Full width for the sidebar */
     margin-bottom: 20px;
-  }
-
-  .blog-posts {
-    width: 100%; /* Full width for the posts */
   }
 
   .blog-post {

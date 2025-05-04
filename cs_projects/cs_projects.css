@@ -127,8 +127,15 @@ p, ul, li {
 /* project Post Content */
 .project-post-content {
     flex: 1; /* Take up remaining space */
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+    padding: 20px; /* Add padding inside the content area */
+    background-color: #fff; /* Optional: Ensure a clean background */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    word-wrap: break-word; /* Break long words to prevent overflow */
+    overflow-wrap: break-word; /* Ensure compatibility with modern browsers */
+    hyphens: auto; /* Add hyphenation for long words if supported */
+    margin: 0 auto; /* Center the content */
+    max-width: 100%; /* Prevent the content from exceeding the screen width */
+    box-sizing: border-box; /* Include padding in the width calculation */
 }
 
 /* Hidden project Posts */
@@ -333,21 +340,7 @@ p, ul, li {
     background-color: #3a6b70;
 }
 
-/* project Post Content */
-.project-post-content {
-    flex: 1; /* Take up remaining space */
-    padding: 20px; /* Add padding inside the content area */
-    background-color: #fff; /* Optional: Ensure a clean background */
-    border-radius: 8px; /* Optional: Add rounded corners */
-    word-wrap: break-word; /* Break long words to prevent overflow */
-    overflow-wrap: break-word; /* Ensure compatibility with modern browsers */
-    hyphens: auto; /* Add hyphenation for long words if supported */
-    margin: 0 auto; /* Center the content */
-    max-width: 100%; /* Prevent the content from exceeding the screen width */
-    box-sizing: border-box; /* Include padding in the width calculation */
-}
-
-/* project Post Title */
+/* Ensure the title and other headings wrap properly */
 .project-post-content h1 {
     margin-top: 0; /* Remove default margin */
     margin-bottom: 20px; /* Add spacing below the title */

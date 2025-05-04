@@ -139,7 +139,7 @@ body .additional-background {
 }
 
 /* Responsive font sizes and layout adjustments */
-@media (max-width < 768px) {
+@media (max-width: 768px) { /* Fixed invalid media query */
     .home-top-text h1 {
         font-size: 30px; 
     }
@@ -191,7 +191,7 @@ body .additional-background {
     }
 }
 
-@media (max-width < 480px) {
+@media (max-width: 480px) { /* Fixed invalid media query */
     .home-top-text h1 {
         font-size: 24px;
     }
@@ -369,7 +369,7 @@ body .additional-background {
 }
 
 /* Responsive adjustments */
-@media (max-width < 768px) {
+@media (max-width: 768px) { /* Fixed invalid media query */
     .project-box {
         flex-direction: column; /* Stack content vertically on smaller screens */
         width: 80%; /* Adjust the width for smaller screens */
@@ -389,7 +389,7 @@ body .additional-background {
     }
 }
 
-@media (max-width < 480px) {
+@media (max-width: 480px) { /* Fixed invalid media query */
     .project-box {
         width: 100%; /* Full width for very small screens */
     }
