@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap");
 
 html, body {
     overflow-x: hidden;
@@ -7,19 +7,32 @@ html, body {
 }
 
 h3 {
-    font-family: 'Nunito', sans-serif;
-    font-size: 18px;
+    font-family: Nunito, sans-serif;
+    font-size: 2vw;
+    max-font-size: 18px;
     color: #4F868D;
     white-space: nowrap;
 }
 
 h1 {
-    font-family: 'Playfair Display', serif;
-    white-space: nowrap;
+    font-family: Playfair Display, serif;
+    white-space: normal; /* Allow wrapping */
+    font-size: 4vw; /* Adjusts based on viewport width */
+    max-font-size: 36px; /* Optional: Set a maximum size */
+    word-wrap: break-word; /* Ensure long words break properly */
+    overflow-wrap: break-word; /* Break long words if necessary */
+    text-align: center; /* Center-align the text */
+    margin: 0 auto; /* Center the heading horizontally */
+}
+
+h2 {
+    font-family: Nunito, sans-serif;
+    font-size: 3vw;
+    max-font-size: 28px;
 }
 
 p {
-    font-family: 'Nunito', sans-serif;
+    font-family: Nunito, sans-serif;
     white-space: normal;
     word-wrap: break-word;
 }
@@ -60,7 +73,6 @@ p {
     margin: 0;
 }
 
-
 /* Background Images */
 body::before, body::after {
     content: "";
@@ -71,7 +83,7 @@ body::before, body::after {
 }
 
 body::before {
-    background-image: url('assets/images/web-design-me.png');
+    background-image: url("assets/images/web-design-me.png");
     background-position: top right;
     width: 600px; /* Adjust the width as needed */
     height: 600px; /* Adjust the height as needed */
@@ -81,7 +93,7 @@ body::before {
 }
 
 body::after {
-    background-image: url('assets/images/purple-blob1.png'); /* Replace with your image path */
+    background-image: url("assets/images/purple-blob1.png"); /* Replace with your image path */
     background-position: bottom left;
     width: 500px; /* Adjust the width as needed */
     height: 800px; /* Adjust the height as needed */
@@ -99,7 +111,7 @@ body::before, body::after, body .additional-background {
 }
 
 body .additional-background {
-    background-image: url('assets/images/purple-blob1.png'); /* Replace with your image path */
+    background-image: url("assets/images/purple-blob1.png"); /* Replace with your image path */
     background-position: center left;
     width: 400px; /* Adjust the width as needed */
     height: 400px; /* Adjust the height as needed */
@@ -108,11 +120,10 @@ body .additional-background {
     transform: translateY(-50%);
 }
 
-
 /* Blob Background for Featured inspos */
 .blob-background {
     position: absolute;
-    background-image: url('assets/images/purple-blob2.png'); /* Replace with your image path */
+    background-image: url("assets/images/purple-blob2.png"); /* Replace with your image path */
     background-size: contain;
     background-repeat: no-repeat;
     width: 500px; /* Adjust the width as needed */
@@ -122,7 +133,6 @@ body .additional-background {
     z-index: -1; /* Ensure it is behind the featured inspos */
 }
 
-
 /* Back to Top Link */
 .back-to-top-container {
     text-align: center;
@@ -130,7 +140,7 @@ body .additional-background {
 }
 
 .back-to-top {
-    font-family: 'Nunito', sans-serif;
+    font-family: Nunito, sans-serif;
     font-size: 16px;
     color: #4F868D;
     text-decoration: none;
@@ -142,13 +152,15 @@ body .additional-background {
 }
 
 /* Responsive font sizes and layout adjustments */
-@media (max-width: 768px) {
+@media (width >= 768px) {
     .home-top-text h1 {
         font-size: 30px; 
     }
+
     .home-top-text h3 {
         font-size: 22px;
     }
+
     .home-top-text p {
         font-size: 14px;
     }
@@ -192,13 +204,15 @@ body .additional-background {
     }
 }
 
-@media (max-width: 480px) {
+@media (width >= 480px) {
     .home-top-text h1 {
         font-size: 24px;
     }
+
     .home-top-text h3 {
         font-size: 18px; 
     }
+
     .home-top-text p {
         font-size: 12px; 
     }
@@ -251,7 +265,7 @@ body .additional-background {
 .button {
     display: inline-block;
     padding: 10px 20px;
-    font-family: 'Nunito', sans-serif;
+    font-family: Nunito, sans-serif;
     font-size: 16px;
     text-align: center;
     text-decoration: none;
@@ -267,14 +281,14 @@ body .additional-background {
 
 .linkedin-button {
     background-color: transparent;
-    color: rgb(0, 0, 0);
-    border: 2px solid rgb(0, 0, 0);
+    color: rgb(0 0 0);
+    border: 2px solid rgb(0 0 0);
     margin-left: 10px;
 }
 
 .button:hover {
     background-color: black;
-    color:  #FDC435;
+    color: #FDC435;
 }
 
 /* Featured inspos */
@@ -306,8 +320,25 @@ body .additional-background {
     width: 50%; /* Set the width to 50% of the screen */
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
     background-color: #fff;
+}
+
+.inspo-text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.inspo-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.inspo-image img {
+    width: 100%; /* Set the image width to 100% of the inspo image container */
+    height: auto;
+    border-radius: 8px;
 }
 
 .inspo-box.type1 .inspo-text {
@@ -330,27 +361,10 @@ body .additional-background {
     text-align: left;
 }
 
-.inspo-text {
-    flex: 1;
-    padding-right: 20px;
-}
-
-.inspo-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
-.inspo-image img {
-    width: 100%; /* Set the image width to 100% of the inspo image container */
-    height: auto;
-    border-radius: 8px;
-}
-
 .view-inspo-button {
     display: inline-block;
     padding: 10px 20px;
-    font-family: 'Nunito', sans-serif;
+    font-family: Nunito, sans-serif;
     font-size: 16px;
     text-align: center;
     text-decoration: none;
@@ -368,7 +382,7 @@ body .additional-background {
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (width >= 768px) {
     .inspo-box {
         flex-direction: column; /* Stack content vertically on smaller screens */
         width: 80%; /* Adjust the width for smaller screens */
@@ -391,14 +405,9 @@ body .additional-background {
     .featured-inspos {
         width: 90%; /* Reduce the width for smaller screens */
     }
-
-    .inspo-text {
-        padding-right: 0;
-        margin-bottom: 20px;
-    }
 }
 
-@media (max-width: 480px) {
+@media (width >= 480px) {
     .inspo-box {
         width: 100%; /* Full width for very small screens */
     }
@@ -410,14 +419,6 @@ body .additional-background {
     .featured-inspos {
         width: 100%; /* Full width for very small screens */
     }
-
-    .inspo-box {
-        width: 100%; /* Full width for inspo boxes */
-    }
-
-    .inspo-image img {
-        width: 60%; /* Adjust the image width for very small screens */
-    }
 }
 
 /* Reading List */
@@ -425,7 +426,7 @@ body .additional-background {
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
-    font-family: 'Nunito', sans-serif;
+    font-family: Nunito, sans-serif;
 }
 
 .reading-list-container h1 {
@@ -464,9 +465,23 @@ body .additional-background {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.artist img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.media img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 .book:hover img {
     transform: scale(1.1);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgb(0 0 0 / 20%);
 }
 
 /* Always-visible title and author */
@@ -495,7 +510,7 @@ body .additional-background {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgb(0 0 0 / 80%);
     color: white;
     opacity: 0;
     display: flex;
@@ -536,7 +551,7 @@ body .additional-background {
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
-    font-family: 'Nunito', sans-serif;
+    font-family: Nunito, sans-serif;
 }
 
 .artists-list-container h1 {
@@ -568,16 +583,9 @@ body .additional-background {
     cursor: pointer;
 }
 
-.artist img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
 .artist:hover img {
     transform: scale(1.1);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgb(0 0 0 / 20%);
 }
 
 .artist-title {
@@ -602,7 +610,7 @@ body .additional-background {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgb(0 0 0 / 80%);
     color: white;
     opacity: 0;
     display: flex;
@@ -636,7 +644,7 @@ body .additional-background {
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
-    font-family: 'Nunito', sans-serif;
+    font-family: Nunito, sans-serif;
 }
 
 .media-list-container h1 {
@@ -668,16 +676,9 @@ body .additional-background {
     cursor: pointer;
 }
 
-.media img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
 .media:hover img {
     transform: scale(1.1);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgb(0 0 0 / 20%);
 }
 
 .media-title {
@@ -705,7 +706,7 @@ body .additional-background {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgb(0 0 0 / 80%);
     color: white;
     opacity: 0;
     display: flex;
@@ -732,4 +733,33 @@ body .additional-background {
 .media-description p {
     font-size: 14px;
     line-height: 1.4;
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 5vw; /* Larger font size for smaller screens */
+    }
+
+    h2 {
+        font-size: 4vw;
+    }
+
+    h3 {
+        font-size: 3vw;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 6vw; /* Further adjust for very small screens */
+    }
+
+    h2 {
+        font-size: 5vw;
+    }
+
+    h3 {
+        font-size: 4vw;
+    }
 }

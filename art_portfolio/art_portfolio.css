@@ -7,14 +7,14 @@ html, body {
 }
 
 h3 {
-    font-family: 'Nunito', sans-serif;
+    font-family: Nunito, sans-serif;
     font-size: 18px;
     color: #4F868D;
     white-space: nowrap;
 }
 
 h2 {
-    font-family: 'Nunito', sans-serif;
+    font-family: Nunito, sans-serif;
     color: #4F868D;
     white-space: nowrap;
 }
@@ -26,7 +26,7 @@ h1 {
 }
 
 p, ul, li {
-    font-family: 'Nunito', sans-serif;
+    font-family: Nunito, sans-serif;
     white-space: normal;
     word-wrap: break-word;
 }
@@ -39,13 +39,13 @@ p, ul, li {
 
 .sort-container {
     margin-bottom: 20px;
-    font-family: 'Nunito', sans-serif;
+    font-family: Nunito, sans-serif;
 }
 
 #sort-by {
     padding: 5px;
     font-size: 14px;
-    font-family: 'Nunito', sans-serif;
+    font-family: Nunito, sans-serif;
 }
 
 .project-sidebar {
@@ -78,7 +78,7 @@ p, ul, li {
     cursor: pointer;
     width: 100%;
     text-align: left;
-    font-family: 'Nunito', sans-serif;
+    font-family: Nunito, sans-serif;
 }
 
 .filter-button:hover {
@@ -91,17 +91,18 @@ p, ul, li {
     grid-template-columns: 1fr; /* Change to a single column */
     gap: 20px;
 }
+
 /* project Post Container */
 .project-post {
     display: flex;
     justify-content: space-between; /* Ensure content and thumbnail are spaced */
     align-items: center; /* Align items vertically */
     gap: 15px; /* Add spacing between the thumbnail and text */
-    background-color: #ffffff;
+    background-color: #fff;
     border: 1px solid #ddd; /* Single border for the entire post */
     border-radius: 8px;
     padding: 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Single shadow for the entire post */
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%); /* Single shadow for the entire post */
     position: relative; /* Ensure proper positioning for hidden elements */
 }
 
@@ -120,7 +121,7 @@ p, ul, li {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
 }
 
 /* project Post Content */
@@ -141,13 +142,6 @@ p, ul, li {
     box-shadow: none; /* Remove shadow */
 }
 
-/* project Post Content */
-.project-post-content {
-    flex: 1; /* Take up remaining space */
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-}
-
 .project-post h3 {
     font-size: 20px;
     margin-bottom: 10px;
@@ -162,14 +156,14 @@ p, ul, li {
     font-size: 12px;
     color: #888;
     margin-top: 5px;
-    font-family: 'Nunito', sans-serif;
+    font-family: Nunito, sans-serif;
 }
 
 .read-more {
     color: #3E3A5A;
     text-decoration: none;
     font-weight: bold;
-    font-family: 'Nunito', sans-serif;
+    font-family: Nunito, sans-serif;
 }
 
 .read-more:hover {
@@ -186,7 +180,7 @@ p, ul, li {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
 }
 
 /* Style for the Back to project button */
@@ -199,7 +193,7 @@ p, ul, li {
     display: inline-block;
     padding: 10px 20px;
     font-size: 16px;
-    font-family: 'Nunito', sans-serif;
+    font-family: Nunito, sans-serif;
     color: #fff;
     background-color: #4F868D;
     text-decoration: none;
@@ -219,7 +213,7 @@ p, ul, li {
 }
 
 .back-to-top {
-    font-family: 'Nunito', sans-serif;
+    font-family: Nunito, sans-serif;
     font-size: 16px;
     color: #4F868D;
     text-decoration: none;
@@ -244,7 +238,7 @@ p, ul, li {
     background-color: #f9f9f9;
     padding: 15px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
     position: sticky; /* Enable sticky positioning */
     top: 20px; /* Distance from the top of the viewport */
     height: fit-content;
@@ -258,7 +252,7 @@ p, ul, li {
 .project-toc h2 {
     font-size: 18px;
     margin-bottom: 10px;
-    font-family: 'Nunito', sans-serif;
+    font-family: Nunito, sans-serif;
     color: #4F868D;
 }
 
@@ -275,7 +269,7 @@ p, ul, li {
 .project-toc a {
     text-decoration: none;
     color: #4F868D;
-    font-family: 'Nunito', sans-serif;
+    font-family: Nunito, sans-serif;
     font-size: 14px;
 }
 
@@ -283,12 +277,67 @@ p, ul, li {
     text-decoration: underline;
 }
 
+/* Project title container */
+.project-title-container {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: flex-start; /* Align items to the left */
+    gap: 10px; /* Add spacing between the title and button */
+    margin-bottom: 20px; /* Add spacing below the container */
+}
+
+.project-title-container h1 {
+    margin: 0; /* Remove default margin */
+    font-size: 28px; /* Adjust font size for better readability */
+    font-family: 'Playfair Display', serif;
+    color: #4F868D;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+.project-title-container .small-button {
+    padding: 5px 10px;
+    font-size: 12px;
+    font-family: Nunito, sans-serif;
+    color: #fff;
+    background-color: #4F868D;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.project-title-container .small-button:hover {
+    background-color: #3a6b70;
+}
+
+/* Back to project top button */
+.back-to-project-top {
+    margin-bottom: 20px;
+    padding-left: 20px; /* Add left padding to align with the content */
+}
+
+.back-to-project-top .small-button {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-family: Nunito, sans-serif;
+    color: #fff;
+    background-color: #4F868D;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.back-to-project-top .small-button:hover {
+    background-color: #3a6b70;
+}
+
 /* project Post Content */
 .project-post-content {
     flex: 1; /* Take up remaining space */
     padding: 20px; /* Add padding inside the content area */
-    margin: 0; /* Ensure no extra margin is added */
-    background-color: #ffffff; /* Optional: Ensure a clean background */
+    background-color: #fff; /* Optional: Ensure a clean background */
     border-radius: 8px; /* Optional: Add rounded corners */
     word-wrap: break-word; /* Break long words to prevent overflow */
     overflow-wrap: break-word; /* Ensure compatibility with modern browsers */
@@ -321,71 +370,18 @@ p, ul, li {
     hyphens: auto; /* Add hyphenation for long words if supported */
 }
 
-/* Small Back to project Button */
-.back-to-project-top {
-    margin-bottom: 20px;
-    padding-left: 20px; /* Add left padding to align with the content */
-}
-
-.back-to-project-top .small-button {
-    display: inline-block;
-    padding: 5px 10px;
-    font-size: 12px;
-    font-family: 'Nunito', sans-serif;
-    color: #fff;
-    background-color: #4F868D;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.back-to-project-top .small-button:hover {
-    background-color: #3a6b70;
-}
-
-/* project Post Title and Back to project Button Container */
-.project-title-container {
-    display: flex;
-    align-items: center; /* Align items vertically */
-    justify-content: flex-start; /* Align items to the left */
-    gap: 10px; /* Add spacing between the title and button */
-    margin-bottom: 20px; /* Add spacing below the container */
-}
-
-.project-title-container h1 {
-    margin: 0; /* Remove default margin */
-    font-size: 28px; /* Adjust font size for better readability */
-    font-family: 'Playfair Display', serif;
-    color: #4F868D;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
-}
-
-.project-title-container .small-button {
-    padding: 5px 10px;
-    font-size: 12px;
-    font-family: 'Nunito', sans-serif;
-    color: #fff;
-    background-color: #4F868D;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.project-title-container .small-button:hover {
-    background-color: #3a6b70;
-}
-
 /* Ensure the title and other headings wrap properly */
-.project-post-content h2, .project-post-content h3 {
+.project-post-content h2, 
+.project-post-content h3 {
     word-wrap: break-word;
     overflow-wrap: break-word;
     hyphens: auto;
 }
 
 /* Ensure the title and other headings wrap properly */
-.project-post-content h1, .project-post-content h2, .project-post-content h3 {
+.project-post-content h1, 
+.project-post-content h2, 
+.project-post-content h3 {
     word-wrap: break-word;
     overflow-wrap: break-word;
     hyphens: auto;
@@ -393,7 +389,7 @@ p, ul, li {
 }
 
 /* Single column layout for smaller screens */
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
     .project-posts {
         grid-template-columns: 1fr; /* Single column */
     }

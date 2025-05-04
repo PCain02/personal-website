@@ -1,24 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 
-
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Nunito', sans-serif;
+    font-family: Nunito, sans-serif;
     overflow-x: hidden;
     width: 100%;
 }
 
 h3 {
-    font-family: 'Nunito', sans-serif;
+    font-family: Nunito, sans-serif;
     font-size: 18px;
     color: #4F868D;
     white-space: nowrap;
 }
 
 h1 {
-    font-family: 'Playfair Display', serif;
+    font-family: Playfair Display, serif;
     white-space: nowrap;
     margin-left: 30px;
 }
@@ -29,11 +28,12 @@ h1 {
     margin-top: 30px;
     margin-left: 30px;
 }
+
 .back-to-project .button {
     display: inline-block;
     padding: 10px 20px;
     font-size: 16px;
-    font-family: 'Nunito', sans-serif;
+    font-family: Nunito, sans-serif;
     color: #fff;
     background-color: #4F868D;
     text-decoration: none;
@@ -86,13 +86,10 @@ h1 {
 }
 
 /* Responsive Design for Smaller Screens */
-@media (max-width: 768px) {
-
-
+@media screen and (max-width: 768px) {
     .draggable {
         width: 100px; /* Shrink images for smaller screens */
     }
-
 
     h1 {
         font-size: 24px; /* Adjust heading size for smaller screens */
@@ -104,8 +101,7 @@ h1 {
     }
 }
 
-@media (max-width: 480px) {
-
+@media screen and (max-width: 480px) {
     .draggable {
         width: 80px; /* Further shrink images for very small screens */
     }

@@ -18,9 +18,8 @@ a {
     text-decoration: none;
 }
 
-
 .site-name {
-    font-family: 'Comfortaa', sans-serif;
+    font-family: Comfortaa, sans-serif; /* Removed unnecessary quotes */
     font-size: 18px;
     color: #4F868D;
     white-space: nowrap;
@@ -37,11 +36,11 @@ a {
     padding: 8px;
     border-radius: 5px;
     width: 150px;
-    font-family: 'Comfortaa', sans-serif; /* Add this line */
+    font-family: Comfortaa, sans-serif; /* Removed unnecessary quotes */
 }
 
 .search-bar button {
-    display: inline-block; /* Change this line */
+    display: inline-block;
 }
 
 /* Navigation Styles */
@@ -55,7 +54,7 @@ a {
     background-color: #F6E6D8;
     border-radius: 10px;
     padding: 8px 12px;
-    font-family: 'Comfortaa', sans-serif;
+    font-family: Comfortaa, sans-serif; /* Removed unnecessary quotes */
 }
 
 .nav-links a {
@@ -64,7 +63,7 @@ a {
     font-size: 16px;
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) { /* Updated media feature range notation */
     .navbar {
         flex-direction: column; /* Stack elements vertically */
         text-align: center; /* Center-align text */

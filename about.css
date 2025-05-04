@@ -2,14 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 
 h3 {
-    font-family: 'Nunito', sans-serif;
+    font-family: Nunito, sans-serif;
     font-size: 18px;
-    color: #4F868D;
+    color: rgb(79, 134, 141);
     white-space: nowrap;
 }
 
 h2 {
-    font-family: 'Nunito', sans-serif;
+    font-family: Nunito, sans-serif;
     white-space: nowrap;
 }
 
@@ -18,12 +18,13 @@ h1 {
     white-space: nowrap;
 }
 
-li{
-    font-family: 'Nunito', sans-serif;
+li {
+    font-family: Nunito, sans-serif;
     white-space: nowrap;
 }
+
 p {
-    font-family: 'Nunito', sans-serif;
+    font-family: Nunito, sans-serif;
     white-space: normal;
     word-wrap: break-word;
 }
@@ -45,7 +46,7 @@ p {
 
 .home-top-text {
     max-width: 60%;
-    word-wrap: break-word; 
+    word-wrap: break-word;
 }
 
 .home-top-text h1 {
@@ -63,7 +64,6 @@ p {
     margin: 0;
 }
 
-
 .button-container {
     margin-top: 20px;
 }
@@ -71,7 +71,7 @@ p {
 .button {
     display: inline-block;
     padding: 10px 20px;
-    font-family: 'Nunito', sans-serif;
+    font-family: Nunito, sans-serif;
     font-size: 16px;
     text-align: center;
     text-decoration: none;
@@ -80,9 +80,9 @@ p {
 }
 
 .download-button {
-    background-color: #FDC435;
+    background-color: rgb(253, 196, 53);
     color: black;
-    border: 2px solid #FDC435;
+    border: 2px solid rgb(253, 196, 53);
     margin-top: 10px;
 }
 
@@ -105,16 +105,15 @@ p {
 }
 
 .github-button {
-    background-color: #FDC435;
+    background-color: rgb(253, 196, 53);
     color: black;
-    border: 2px solid #FDC435;
+    border: 2px solid rgb(253, 196, 53);
     margin-top: 10px;
 }
 
-
 .button:hover {
     background-color: black;
-    color:  #FDC435;
+    color: rgb(253, 196, 53);
 }
 
 .skills-container {
@@ -131,7 +130,8 @@ p {
     text-align: left; /* Align text to the left inside the columns */
 }
 
-.skills-column h2, .skills-column h3 {
+.skills-column h2,
+.skills-column h3 {
     margin-bottom: 10px;
 }
 
@@ -147,20 +147,21 @@ p {
     line-height: 1.5; /* Improves readability for wrapped text */
 }
 
-
 @media (max-width: 768px) {
     .home-top-text h1 {
-        font-size: 30px; 
+        font-size: 30px;
     }
+
     .home-top-text h3 {
         font-size: 22px;
     }
+
     .home-top-text p {
         font-size: 14px;
     }
 
     .home-image img {
-        width: 150px; 
+        width: 150px;
     }
 
     .home-container {
@@ -169,7 +170,7 @@ p {
     }
 
     .home-top-text {
-        max-width: 90%; 
+        max-width: 90%;
     }
 
     .button {
@@ -193,19 +194,21 @@ p {
     .home-top-text h1 {
         font-size: 24px;
     }
+
     .home-top-text h3 {
-        font-size: 18px; 
+        font-size: 18px;
     }
+
     .home-top-text p {
-        font-size: 12px; 
+        font-size: 12px;
     }
 
     .home-image img {
-        width: 120px; 
+        width: 120px;
     }
 
     .home-top-text {
-        max-width: 100%; 
+        max-width: 100%;
     }
 
     .button {
