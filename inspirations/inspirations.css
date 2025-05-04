@@ -9,26 +9,23 @@ html, body {
 h3 {
     font-family: Nunito, sans-serif;
     font-size: 2vw;
-    max-font-size: 18px;
     color: #4F868D;
     white-space: nowrap;
 }
 
 h1 {
-    font-family: Playfair Display, serif;
-    white-space: normal; /* Allow wrapping */
-    font-size: 4vw; /* Adjusts based on viewport width */
-    max-font-size: 36px; /* Optional: Set a maximum size */
-    word-wrap: break-word; /* Ensure long words break properly */
-    overflow-wrap: break-word; /* Break long words if necessary */
-    text-align: center; /* Center-align the text */
-    margin: 0 auto; /* Center the heading horizontally */
+    font-family: "Playfair Display", serif;
+    white-space: normal;
+    font-size: 4vw;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-align: center;
+    margin: 0 auto;
 }
 
 h2 {
     font-family: Nunito, sans-serif;
     font-size: 3vw;
-    max-font-size: 28px;
 }
 
 p {
@@ -736,9 +733,9 @@ body .additional-background {
 }
 
 /* Media Queries for Smaller Screens */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     h1 {
-        font-size: 5vw; /* Larger font size for smaller screens */
+        font-size: 5vw;
     }
 
     h2 {
@@ -750,9 +747,9 @@ body .additional-background {
     }
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
     h1 {
-        font-size: 6vw; /* Further adjust for very small screens */
+        font-size: 6vw;
     }
 
     h2 {
