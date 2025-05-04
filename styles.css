@@ -71,7 +71,7 @@ body::before, body::after {
 }
 
 body::before {
-    background-image: url('assets/images/web-design-me.png');
+    background-image: url('assets/images/web-design-me.webp');
     background-position: top right;
     width: 600px; /* Adjust the width as needed */
     height: 600px; /* Adjust the height as needed */
@@ -81,7 +81,7 @@ body::before {
 }
 
 body::after {
-    background-image: url('assets/images/purple-blob1.png'); /* Replace with your image path */
+    background-image: url('assets/images/purple-blob1.webp'); /* Replace with your image path */
     background-position: bottom left;
     width: 500px; /* Adjust the width as needed */
     height: 800px; /* Adjust the height as needed */
@@ -99,7 +99,7 @@ body::before, body::after, body .additional-background {
 }
 
 body .additional-background {
-    background-image: url('assets/images/purple-blob1.png'); /* Replace with your image path */
+    background-image: url('assets/images/purple-blob1.webp'); /* Replace with your image path */
     background-position: center left;
     width: 400px; /* Adjust the width as needed */
     height: 400px; /* Adjust the height as needed */
@@ -112,7 +112,7 @@ body .additional-background {
 /* Blob Background for Featured Projects */
 .blob-background {
     position: absolute;
-    background-image: url('assets/images/purple-blob2.png'); /* Replace with your image path */
+    background-image: url('assets/images/purple-blob2.webp'); /* Replace with your image path */
     background-size: contain;
     background-repeat: no-repeat;
     width: 500px; /* Adjust the width as needed */
@@ -418,22 +418,4 @@ body .additional-background {
     .project-image img {
         width: 60%; /* Adjust the image width for very small screens */
     }
-}
-
-.search-results-container {
-    width: 100%;
-    max-width: 1000px; /* Adjust as needed */
-    margin: 20px auto;
-    padding: 20px;
-    box-sizing: border-box;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.search-result-item {
-    margin-bottom: 16px;
-    font-family: 'Nunito', sans-serif;
-    font-size: 16px;
-    color: #333;
 }
