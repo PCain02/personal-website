@@ -148,7 +148,7 @@ p {
     line-height: 1.5; /* Improves readability for wrapped text */
 }
 
-@media (max-width: 768px) { /* Fixed: Modern media feature range notation */
+@media (width <= 768px) { /* Fixed: Context media feature range notation */
     .home-top-text h1 {
         font-size: 30px;
     }
@@ -191,7 +191,7 @@ p {
     }
 }
 
-@media (max-width: 480px) { /* Fixed: Modern media feature range notation */
+@media (width <= 480px) { /* Fixed: Context media feature range notation */
     .home-top-text h1 {
         font-size: 24px;
     }

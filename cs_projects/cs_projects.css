@@ -314,16 +314,6 @@ p, ul, li {
     transition: background-color 0.3s ease;
 }
 
-.project-title-container .small-button:hover {
-    background-color: #3a6b70;
-}
-
-/* Back to project top button */
-.back-to-project-top {
-    margin-bottom: 20px;
-    padding-left: 20px; /* Add left padding to align with the content */
-}
-
 .back-to-project-top .small-button {
     display: inline-block;
     padding: 5px 10px;
@@ -334,6 +324,16 @@ p, ul, li {
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+}
+
+.project-title-container .small-button:hover {
+    background-color: #3a6b70;
+}
+
+/* Back to project top button */
+.back-to-project-top {
+    margin-bottom: 20px;
+    padding-left: 20px; /* Add left padding to align with the content */
 }
 
 .back-to-project-top .small-button:hover {
@@ -385,6 +385,7 @@ p, ul, li {
 @media (width <= 1024px) {
     .project-posts {
         grid-template-columns: 1fr; /* Single column */
+        width: 100%; /* Full width for the posts */
     }
 
     .project-container {
@@ -394,10 +395,6 @@ p, ul, li {
     .project-sidebar {
         width: 95%; /* Full width for the sidebar */
         margin-bottom: 20px;
-    }
-
-    .project-posts {
-        width: 100%; /* Full width for the posts */
     }
 
     .project-post {
