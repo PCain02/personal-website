@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
     // --- Search Functionality ---
     const searchInput = document.getElementById("search-input");
     const searchButton = document.getElementById("search-button");
@@ -88,30 +88,45 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // --- Sorting Functionality ---
     const sortByDropdown = document.getElementById("sort-by");
+    const projectPostsContainer = document.querySelector(".project-posts");
+    const projectPosts = Array.from(document.querySelectorAll(".project-post"));
 
-    const sortPosts = (containerSelector, postSelector, order) => {
-        const container = document.querySelector(containerSelector);
-        const posts = Array.from(document.querySelectorAll(postSelector));
-
-        const sortedPosts = posts.sort((a, b) => {
+    // Function to sort project posts
+    const sortProjectPosts = (order) => {
+        const sortedPosts = projectPosts.sort((a, b) => {
             const dateA = new Date(a.getAttribute("data-date"));
             const dateB = new Date(b.getAttribute("data-date"));
+
             return order === "newest" ? dateB - dateA : dateA - dateB;
         });
 
-        container.innerHTML = "";
-        sortedPosts.forEach(post => container.appendChild(post));
+        // Clear and re-append sorted posts
+        projectPostsContainer.innerHTML = "";
+        sortedPosts.forEach(post => projectPostsContainer.appendChild(post));
     };
 
-    if (sortByDropdown) {
-        sortByDropdown.addEventListener("change", (event) => {
-            const selectedOrder = event.target.value;
-            sortPosts(".blog-posts", ".blog-post", selectedOrder);
-            sortPosts(".project-posts", ".project-post", selectedOrder);
+    // Example: Add sorting by date (newest first)
+    const sortByDate = () => {
+        const postsArray = Array.from(projectPosts);
+        postsArray.sort((a, b) => {
+            const dateA = new Date(a.getAttribute("data-date"));
+            const dateB = new Date(b.getAttribute("data-date"));
+            return dateB - dateA; // Newest first
         });
 
-        // Default sort
-        sortPosts(".blog-posts", ".blog-post", "newest");
-        sortPosts(".project-posts", ".project-post", "newest");
-    }
+        projectPostsContainer.innerHTML = ""; // Clear existing posts
+        postsArray.forEach(post => projectPostsContainer.appendChild(post)); // Append sorted posts
+    };
+
+    // Call sortByDate on page load
+    sortByDate();
+
+    // Event listener for the dropdown
+    sortByDropdown.addEventListener("change", (event) => {
+        const selectedOrder = event.target.value;
+        sortProjectPosts(selectedOrder);
+    });
+
+    // Default sort on page load (newest first)
+    sortProjectPosts("newest");
 });
