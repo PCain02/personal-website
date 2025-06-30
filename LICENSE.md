@@ -17,4 +17,4 @@ No additional restrictions — You may not apply legal terms or technological me
 For more information, please visit the license page:  
 [https://creativecommons.org/licenses/by-nc/4.0/](https://creativecommons.org/licenses/by-nc/4.0/)
 
-© [Pallas-Athena Cain](), [2025]. All rights reserved.
+© Pallas-Athena Cain, 2025. All rights reserved.
